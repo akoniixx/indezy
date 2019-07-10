@@ -1,0 +1,7 @@
+.ant-dropdown li { 
+    color: #A07549;
+}
+
+.ant-dropdown li:hover {
+    background-color: #F8F3EF;
+}

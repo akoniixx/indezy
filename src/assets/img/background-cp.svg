@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1288px" viewBox="0 0 1920 1288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="51.2062776%" cy="-36.02809%" fx="51.2062776%" fy="-36.02809%" r="100%" gradientTransform="translate(0.512063,-0.360281),scale(0.388454,1.000000),rotate(90.000000),scale(1.000000,1.951647),translate(-0.512063,0.360281)" id="radialGradient-1">
+            <stop stop-color="#C3CDDE" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FAFAFA" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LoginCP" transform="translate(0.000000, -0.000000)">
+            <g id="Group-3" transform="translate(-383.000000, -288.000000)">
+                <rect id="Rectangle" fill="#FAFAFA" x="383" y="288" width="1920" height="1288"></rect>
+                <ellipse id="Oval" fill="url(#radialGradient-1)" cx="1342.5" cy="521.5" rx="1342.5" ry="521.5"></ellipse>
+                <ellipse id="Oval-Copy" fill="url(#radialGradient-1)" transform="translate(1342.500000, 1421.500000) scale(1, -1) translate(-1342.500000, -1421.500000) " cx="1342.5" cy="1421.5" rx="1342.5" ry="521.5"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>
