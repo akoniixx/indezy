@@ -16,18 +16,30 @@ ${disableTextSelection}
 `;
 
 export const NavItemsGroup = styled.div`
-flex-basis: 70%;
+flex-basis: 50%;
 height: 55px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-max-width: 900px;
+max-width: 700px;
 & > :not(:first-child){
     margin-left: 10px;
 }
 `;
 
 export const NavItem = styled.span`
+font-size: 1em;
+font-weight: bold;
+cursor: pointer;
+`;
+
+export const NavSpeechItem = styled.div`
+font-size: 1em;
+cursor: pointer;
+align-items: center;
+`;
+
+export const NavSpeechItemBold = styled.span`
 font-size: 1em;
 font-weight: bold;
 cursor: pointer;

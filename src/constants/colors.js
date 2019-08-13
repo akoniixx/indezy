@@ -13,3 +13,7 @@ export const grey1 = "#C9C9C9";
 export const grey2 = "#F3F3F3";
 export const orange = "#FF7761";
 export const red = "#C31E12";
+
+export const themeOrange = "#F47529";
+export const themeBlue = "#2C68A1";
+export const themeYellow = "#F29C32";

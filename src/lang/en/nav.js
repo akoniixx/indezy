@@ -5,5 +5,11 @@ export const nav = {
     bookingTrip: "Book",
     contact: "Contact Us",
     cpButton: "For Event Provider",
-    language: "Language"
+    language: "Language",
+    charts: "Charts",
+    test: "Test",
+    home: "Home",
+    why: "Why indezy?",
+    spec: "Specs",
+    indezy: "Indezy"
 }

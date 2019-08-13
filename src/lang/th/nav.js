@@ -5,5 +5,9 @@ export const nav = {
     bookingTrip: "จองทริป",
     contact: "ติดต่อเรา",
     cpButton: "สำหรับผู้สร้าง Event",
-    language: "ภาษา"
+    language: "ภาษา",
+    charts: "แผนภูมิ",
+    test: "เทส",
+    home: "หน้าแรก",
+    speech: "IoT to industry."
 }

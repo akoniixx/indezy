@@ -7,10 +7,10 @@ import { createGlobalStyle, css } from 'styled-components';
 
 export const colors = {
     contentProvider: {
-        text: '#5F3109'
+        text: '#101010'
     },
     guest: {
-        text: '#5F3109'
+        text: '#101010'
     }
 };
 
@@ -60,6 +60,9 @@ html {
 }
 body {
     color: ${colors.guest.text};
+    background-image: url('/assets/img/test2.svg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 `;
 
@@ -70,7 +73,7 @@ html {
 }
 body {
     color: ${colors.contentProvider.text};
-    background-image: url('/assets/img/background-cp.svg') !important;
+    background-image: url('/assets/img/landingBG.svg') !important;
 }
 `;
 
