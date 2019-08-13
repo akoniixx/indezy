@@ -9,5 +9,6 @@ export default {
     eventDetails: 'eventDetails',
     landingPage: '/',
     login: 'login',
-    test: 'test'
+    test: 'test',
+    chart: 'chart'
 }

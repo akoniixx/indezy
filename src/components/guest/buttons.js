@@ -4,7 +4,7 @@ import { roundButtonRadius, Button } from '../buttons';
 const colors = {
     buttons: {
         cancel: '#ACA7A2',
-        cp: '#3F69B8',
+        cp: '#FFFFFF',
         default: '#368741'
     },
     shadow: {
@@ -25,6 +25,11 @@ ${cssButton}
 
 export const ButtonToCP = styled(Button)`
 background-color: ${colors.buttons.cp};
+${cssButton}
+`;
+
+export const ButtonEmail = styled(Button)`
+background-color: ${colors.buttons.default};
 ${cssButton}
 `;
 

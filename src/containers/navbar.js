@@ -9,7 +9,9 @@ import {
     NavItemsGroup,
     NavItem,
     NavItemGreen,
-    MenuMobileButtonWrapper
+    NavSpeechItem,
+    MenuMobileButtonWrapper,
+    LogoContainer
 } from 'Components/guest/navbar';
 import {GuestButton as Button , ButtonToCP} from 'Components/guest/buttons';
 import LanguageSwitcher from 'Components/guest/languageSwitcher';
@@ -27,30 +29,48 @@ class NavigationBar extends Component {
         const nav = strings.nav;
         const changeLocale = this.props.changeLocale;
         const onNavItemClick = this.props.onNavItemClick;
+
         return (
             <Nav>
-                <Logo
-                    src="/assets/img/Ezytripslogo.png" />
+                <LogoContainer onClick={
+                    (e) => { utils.changePath(history, urls.landingPage); }
+                }>
+                    <Logo src="/assets/img/IndezyLogo2.svg" />
+                        <span style = {{padding: '0px 10px',fontSize: '2.5em',fontWeight: '100',color: '#F47529'}}>{nav.indezy}</span>
+                </LogoContainer>
                 <NavItemsGroup>
                     <Media query={{
                         minWidth: screenWidth.desktop.minWidth
                     }}>
                         <Fragment>
-                            <NavItemGreen onClick={
-                                (e) => { onNavItemClick("book", e); }
+                            <NavItem onClick={
+                                (e) => { onNavItemClick("introduce", e); }
                             }>
-                                {nav.bookingTrip}
-                            </NavItemGreen>
-                            <NavLink to="#">
+                                {nav.home}
+                            </NavItem>
+
+                            <NavItem onClick={ 
+                                (e) => { onNavItemClick("card", e); }
+                            }>
+                                {nav.why}
+                            </NavItem>
+
+                            <NavItem onClick={
+                                (e) => { onNavItemClick("partner", e); }
+                            }>
+                                {nav.spec}
+                            </NavItem>
+
+                            {/* <NavLink to="/Chart">
                                 <NavItem>
                                     {nav.activities}
                                 </NavItem>
-                            </NavLink>
-                            <NavLink to="#">
+                            </NavLink> */}
+                            {/* <NavLink to="#">
                                 <NavItem>
                                     {nav.attractions}
                                 </NavItem>
-                            </NavLink>
+                            </NavLink> */}
                             <NavItem onClick={
                                 (e) => { onNavItemClick("footer", e); }
                             }>
@@ -58,11 +78,16 @@ class NavigationBar extends Component {
                             </NavItem>
                         </Fragment>
                     </Media>
-                    <Button>{nav.bookButton}</Button>
-                    <ButtonToCP
-                        onClick={() => utils.changePath(history, urls.contentProvider)}>
-                        {nav.cpButton}
+                    {/* <Button>{nav.bookButton}</Button> */}
+                    <ButtonToCP style = {{color: '#F47529',fontSize: '1em'}}
+                        onClick={() => utils.changePath(history, urls.chart)}>
+                        {nav.charts}
                     </ButtonToCP>
+                    {/* <NavEmailItem>
+                        <div>Email <NavEmailInput/></div>
+                        <div>Password <NavPasswordInput type = "Password"/></div>
+                    </NavEmailItem> */}
+                   
                     <LanguageSwitcher
                         currentLocale={locale}
                         changeLocale={changeLocale} />
@@ -82,7 +107,6 @@ class NavigationBar extends Component {
 }
 
 class NavBarMobile extends Component {
-
     render() {
         const { strings, onNavItemClick } = this.props;
         const nav = strings.nav;

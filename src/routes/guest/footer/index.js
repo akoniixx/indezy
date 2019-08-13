@@ -13,7 +13,7 @@ class Footer extends Component {
         return (
             <StyledFooter className="footer">
                 <LogoFooter
-                    src="/assets/img/Ezytripslogo.png" />
+                    src="/assets/img/IndezyLogo.svg" />
                 <ContactFooter>
                     <span>{strings.address}</span>
                     <span>{strings.tel}</span>
