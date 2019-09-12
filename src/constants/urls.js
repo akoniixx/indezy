@@ -10,5 +10,6 @@ export default {
     landingPage: '/',
     login: 'login',
     test: 'test',
-    chart: 'chart'
+    chart: 'chart',
+    nlp: 'nlp'
 }

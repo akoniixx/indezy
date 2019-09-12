@@ -16,7 +16,7 @@ ${disableTextSelection}
 `;
 
 export const NavItemsGroup = styled.div`
-flex-basis: 50%;
+flex-basis: 45%;
 height: 55px;
 display: flex;
 justify-content: space-between;

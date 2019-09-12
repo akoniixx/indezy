@@ -50,15 +50,27 @@ class NavigationBar extends Component {
                             </NavItem>
 
                             <NavItem onClick={ 
+                                (e) => { onNavItemClick("what", e); }
+                            }>
+                                What is Indezy?
+                            </NavItem>
+
+                            <NavItem onClick={ 
                                 (e) => { onNavItemClick("card", e); }
                             }>
-                                {nav.why}
+                                Why Indezy?
+                            </NavItem>
+
+                            <NavItem onClick={
+                                (e) => { onNavItemClick("archiv", e); }
+                            }>
+                                Achievement
                             </NavItem>
 
                             <NavItem onClick={
                                 (e) => { onNavItemClick("partner", e); }
                             }>
-                                {nav.spec}
+                                Partner
                             </NavItem>
 
                             {/* <NavLink to="/Chart">
@@ -79,20 +91,20 @@ class NavigationBar extends Component {
                         </Fragment>
                     </Media>
                     {/* <Button>{nav.bookButton}</Button> */}
-                    <ButtonToCP style = {{color: '#F47529',fontSize: '1em'}}
+                    {/* <ButtonToCP style = {{color: '#F47529',fontSize: '1em'}}
                         onClick={() => utils.changePath(history, urls.chart)}>
                         {nav.charts}
-                    </ButtonToCP>
+                    </ButtonToCP> */}
                     {/* <NavEmailItem>
                         <div>Email <NavEmailInput/></div>
                         <div>Password <NavPasswordInput type = "Password"/></div>
                     </NavEmailItem> */}
                    
-                    <LanguageSwitcher
+                    {/* <LanguageSwitcher
                         currentLocale={locale}
-                        changeLocale={changeLocale} />
+                        changeLocale={changeLocale} /> */}
                     <Media query={{
-                        maxWidth: screenWidth.tablet.maxWidth
+                        maxWidth: screenWidth.mobile.maxWidth
                     }}>
                         <NavBarMobile
                             strings={strings}

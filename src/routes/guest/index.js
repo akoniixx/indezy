@@ -11,6 +11,7 @@ import { GlobalStyleGuest } from 'Components/css';
 import Chart from 'Containers/chart';
 import urls from 'Constants/urls';
 import Test from 'Routes/guest/test';
+import newLandingPage from 'Routes/guest/newLandingPage'
 
 class MainApp extends Component {
 
@@ -40,6 +41,7 @@ class MainApp extends Component {
                 </Headroom>
                 <main className="main" ref={(e) => this.headroom = e}>
                     <Switch>
+                        <Route path={`${match.url}${urls.nlp}`} component={newLandingPage} history={history} />
                         <Route path={`${match.url}${urls.chart}`} component={Chart} history={history} />
                         <Route path={`${match.url}${urls.test}`} component={Test} history={history} />
                         <Route path={`${match.url}`} render={props => <LandingPage {...props} reference={(ref, event) => this[ref] = event} />} history={history} />

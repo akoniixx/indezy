@@ -39,6 +39,7 @@
     "react-scripts": "3.0.1",
     "react-scroll-to-component": "^1.0.2",
     "react-siema": "^1.0.1",
+    "reactstrap": "^8.0.1",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",
     "siema": "^1.5.1",
