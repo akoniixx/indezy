@@ -16,12 +16,11 @@ ${disableTextSelection}
 `;
 
 export const NavItemsGroup = styled.div`
-flex-basis: 50%;
 height: 55px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-max-width: 700px;
+/* max-width: 700px; */
 & > :not(:first-child){
     margin-left: 10px;
 }

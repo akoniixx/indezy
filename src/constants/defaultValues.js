@@ -31,3 +31,22 @@ export const screenWidth = {
         minWidth: 1201
     }
 }
+
+export const margin = {
+    xsmall: "0.5rem",
+    small: "1rem", 
+    mormal: "3rem",
+    big: "5rem"
+}
+
+export const padding = {
+    mobile: 8, 
+    tablet: 16,
+    desktop: 24
+}
+
+export const fontSize = {
+    l: "1em",
+    tablet: 16,
+    desktop: 24
+}

@@ -60,7 +60,7 @@ padding: 20px
 export const CardItem = styled(flexBoxColCenter)`
 height: 200px
 width: 180px
-margin: 0px 15px
+margin: 0px 30px
 border-radius:5px;
 `;
 

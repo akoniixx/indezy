@@ -32,12 +32,9 @@ class NavigationBar extends Component {
 
         return (
             <Nav>
-                <LogoContainer onClick={
-                    (e) => { utils.changePath(history, urls.landingPage); }
-                }>
-                    <Logo src="/assets/img/IndezyLogo2.svg" />
-                        <span style = {{padding: '0px 10px',fontSize: '2.5em',fontWeight: '100',color: '#F47529'}}>{nav.indezy}</span>
-                </LogoContainer>
+                <Logo onClick={(e) => { utils.changePath(history, urls.landingPage); }} 
+                src="/assets/img/Asset_2@3x.png" />
+
                 <NavItemsGroup>
                     <Media query={{
                         minWidth: screenWidth.desktop.minWidth
@@ -50,15 +47,27 @@ class NavigationBar extends Component {
                             </NavItem>
 
                             <NavItem onClick={ 
+                                (e) => { onNavItemClick("what", e); }
+                            }>
+                                What is Indezy?
+                            </NavItem>
+
+                            <NavItem onClick={ 
                                 (e) => { onNavItemClick("card", e); }
                             }>
-                                {nav.why}
+                                Why Indezy?
+                            </NavItem>
+
+                            <NavItem onClick={
+                                (e) => { onNavItemClick("archiv", e); }
+                            }>
+                                Achievement
                             </NavItem>
 
                             <NavItem onClick={
                                 (e) => { onNavItemClick("partner", e); }
                             }>
-                                {nav.spec}
+                                Partner
                             </NavItem>
 
                             {/* <NavLink to="/Chart">
@@ -79,28 +88,31 @@ class NavigationBar extends Component {
                         </Fragment>
                     </Media>
                     {/* <Button>{nav.bookButton}</Button> */}
-                    <ButtonToCP style = {{color: '#F47529',fontSize: '1em'}}
+                    {/* <ButtonToCP style = {{color: '#F47529',fontSize: '1em'}}
                         onClick={() => utils.changePath(history, urls.chart)}>
                         {nav.charts}
-                    </ButtonToCP>
+                    </ButtonToCP> */}
                     {/* <NavEmailItem>
                         <div>Email <NavEmailInput/></div>
                         <div>Password <NavPasswordInput type = "Password"/></div>
                     </NavEmailItem> */}
                    
-                    <LanguageSwitcher
+                    {/* <LanguageSwitcher
                         currentLocale={locale}
-                        changeLocale={changeLocale} />
-                    <Media query={{
-                        maxWidth: screenWidth.tablet.maxWidth
+                        changeLocale={changeLocale} /> */}
+                    {/* <Media query={{
+                        maxWidth: screenWidth.mobile.maxWidth
                     }}>
                         <NavBarMobile
                             strings={strings}
                             changeLocale={changeLocale}
                             locale={locale}
                             onNavItemClick={onNavItemClick} />
-                    </Media>
+                    </Media> */}
                 </NavItemsGroup>
+                <Button onClick={(e) => { utils.changePath(history, urls.nlp); }} >
+                    <span>Login</span>
+                </Button>
             </Nav>
         );
     }
