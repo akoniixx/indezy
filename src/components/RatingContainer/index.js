@@ -295,7 +295,7 @@ export default class RatingContainer extends React.Component {
                                         color:'#A9A9A9',
                                         fontSize:'1.3em'
                                     }}>
-                                        เอา Facebook ผมไปทำแทนเถอะ!!!
+                                        เอา Facebook ผมไปทำแทนเถอะ!!!!
                                     </span>
                                 </CommentContainer>
                         </RowContainer>
