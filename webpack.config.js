@@ -89,15 +89,15 @@ module.exports = {
                     }, {
                     loader: 'less-loader', // compiles Less to CSS
                     options: {
-                        modifyVars: {
-                            'primary-color': '#1D1E62',
-                            'link-color': '#1DA57A',
-                            'border-radius-base': '2px',
-                            // or
-                            'hack': `true; @import "your-less-file-path.less";`, // Override with less file
-                        },
-                        javascriptEnabled: true,
-                    }
+                               modifyVars: {
+                                 'primary-color': '#2C68A1',
+                                 'link-color': '#1DA57A',
+                                 'border-radius-base': '2px',
+                                 // or
+                                 //'hack': `true; @import "your-less-file-path.less";`, // Override with less file
+                               },
+                               javascriptEnabled: true,
+                             },
                 }]
             }
         ]},

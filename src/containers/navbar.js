@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { changeLocale } from 'Redux/actions';
 import Media from 'react-media';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import {
     NavigationBar as Nav,
     Logo,
     NavItemsGroup,
-    NavItem,
+    NavItem as ni,
     NavItemGreen,
     NavSpeechItem,
     MenuMobileButtonWrapper,
@@ -21,6 +22,10 @@ import { screenWidth } from 'Constants/defaultValues';
 import lang from 'Lang';
 import { Dropdown, Menu } from 'antd';
 
+const NavItem = styled(ni)`
+padding: 2rem 0.5rem 0 0.5rem;
+`;
+
 class NavigationBar extends Component {
 
     render() {
@@ -32,12 +37,9 @@ class NavigationBar extends Component {
 
         return (
             <Nav>
-                <LogoContainer onClick={
-                    (e) => { utils.changePath(history, urls.landingPage); }
-                }>
-                    <Logo src="/assets/img/IndezyLogo2.svg" />
-                        <span style = {{padding: '0px 10px',fontSize: '2.5em',fontWeight: '100',color: '#F47529'}}>{nav.indezy}</span>
-                </LogoContainer>
+                <Logo onClick={(e) => { utils.changePath(history, urls.landingPage); }} 
+                src="/assets/img/Asset_2@3x.png" />
+
                 <NavItemsGroup>
                     <Media query={{
                         minWidth: screenWidth.desktop.minWidth
@@ -46,19 +48,31 @@ class NavigationBar extends Component {
                             <NavItem onClick={
                                 (e) => { onNavItemClick("introduce", e); }
                             }>
-                                {nav.home}
+                                Home
+                            </NavItem>
+
+                            <NavItem onClick={ 
+                                (e) => { onNavItemClick("what", e); }
+                            }>
+                                All in Indezy
                             </NavItem>
 
                             <NavItem onClick={ 
                                 (e) => { onNavItemClick("card", e); }
                             }>
-                                {nav.why}
+                                Goal
+                            </NavItem>
+
+                            <NavItem onClick={
+                                (e) => { onNavItemClick("archiv", e); }
+                            }>
+                                Ratings and reviews
                             </NavItem>
 
                             <NavItem onClick={
                                 (e) => { onNavItemClick("partner", e); }
                             }>
-                                {nav.spec}
+                                Supporter
                             </NavItem>
 
                             {/* <NavLink to="/Chart">
@@ -71,27 +85,27 @@ class NavigationBar extends Component {
                                     {nav.attractions}
                                 </NavItem>
                             </NavLink> */}
-                            <NavItem onClick={
-                                (e) => { onNavItemClick("footer", e); }
-                            }>
-                                {nav.contact}
-                            </NavItem>
+                                <NavItem onClick={
+                                    (e) => { onNavItemClick("footer", e); }
+                                }>
+                                    Contact us
+                                </NavItem>
                         </Fragment>
                     </Media>
                     {/* <Button>{nav.bookButton}</Button> */}
-                    <ButtonToCP style = {{color: '#F47529',fontSize: '1em'}}
+                    {/* <ButtonToCP style = {{color: '#F47529',fontSize: '1em'}}
                         onClick={() => utils.changePath(history, urls.chart)}>
                         {nav.charts}
-                    </ButtonToCP>
+                    </ButtonToCP> */}
                     {/* <NavEmailItem>
                         <div>Email <NavEmailInput/></div>
                         <div>Password <NavPasswordInput type = "Password"/></div>
                     </NavEmailItem> */}
                    
-                    <LanguageSwitcher
+                    {/* <LanguageSwitcher
                         currentLocale={locale}
-                        changeLocale={changeLocale} />
-                    <Media query={{
+                        changeLocale={changeLocale} /> */}
+                     <Media query={{
                         maxWidth: screenWidth.tablet.maxWidth
                     }}>
                         <NavBarMobile
@@ -99,8 +113,14 @@ class NavigationBar extends Component {
                             changeLocale={changeLocale}
                             locale={locale}
                             onNavItemClick={onNavItemClick} />
-                    </Media>
+                    </Media> 
                 </NavItemsGroup>
+
+                <Media query={{minWidth: screenWidth.desktop.minWidth}}>
+                    <Button onClick={(e) => { utils.changePath(history, urls.nlp); }} >
+                        <span>Login</span>
+                    </Button>
+                </Media>
             </Nav>
         );
     }

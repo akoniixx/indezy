@@ -5,7 +5,7 @@ const colors = {
     buttons: {
         cancel: '#ACA7A2',
         cp: '#FFFFFF',
-        default: '#368741'
+        default: '#F47529'
     },
     shadow: {
         button: '#D9D5D2'
