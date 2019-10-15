@@ -5,12 +5,14 @@
 import { combineReducers } from 'redux';
 import settings from './settings/reducer';
 import modals from './controllers/modals/reducer';
+import auth from './auth/reducer';
 //import dashboard from './contentProviders/dashboard/reducer';
 
 const reducers = combineReducers({
     //!Register your reducers here.
     settings,
-    modals
+    modals,
+    auth
     //dashboard
 });
 
