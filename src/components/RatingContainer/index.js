@@ -7,7 +7,6 @@ import {
     RowContainer
 } from 'Components/BlinkLandingPage';
 import {flexBoxColCenter,flexBoxCenter,flexBox,flexBoxCol} from 'Containers/flexbox';
- 
 // styled
 const Star = styled.img`
 width: 10px;
@@ -17,10 +16,12 @@ margin-right: 3px;
 `;
 
 const ProfileContainer = styled(flexBoxColCenter)`
-
 `;
 
 const CommentContainer = styled(flexBoxCol)`
+`;
+
+const StarContainer = styled(flexBoxCenter)`
 `;
 
 const slideImages = [
@@ -69,13 +70,13 @@ export default class RatingContainer extends React.Component {
                                         borderRadius:'50%',
                                         marginBottom:'12px',
                                 }}/>
-                                <flexBoxCenter>
+                                <StarContainer>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/half_star.png"/>
-                                </flexBoxCenter>
+                                </StarContainer>
                             </ProfileContainer>
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
@@ -107,13 +108,13 @@ export default class RatingContainer extends React.Component {
                                         borderRadius:'50%',
                                         marginBottom:'12px',
                                 }}/>
-                                <flexBoxCenter>
+                                <StarContainer>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/half_star.png"/>
-                                </flexBoxCenter>
+                                </StarContainer>
                             </ProfileContainer>
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
@@ -153,13 +154,13 @@ export default class RatingContainer extends React.Component {
                                         borderRadius:'50%',
                                         marginBottom:'12px',
                                 }}/>
-                                <flexBoxCenter>
+                                <StarContainer>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/half_star.png"/>
-                                </flexBoxCenter>
+                                </StarContainer>
                             </ProfileContainer>
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
@@ -191,13 +192,13 @@ export default class RatingContainer extends React.Component {
                                         borderRadius:'50%',
                                         marginBottom:'12px',
                                 }}/>
-                                <flexBoxCenter>
+                                <StarContainer>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/half_star.png"/>
-                                </flexBoxCenter>
+                                </StarContainer>
                             </ProfileContainer>
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
@@ -237,13 +238,13 @@ export default class RatingContainer extends React.Component {
                                         borderRadius:'50%',
                                         marginBottom:'12px',
                                 }}/>
-                                <flexBoxCenter>
+                                <StarContainer>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/half_star.png"/>
-                                </flexBoxCenter>
+                                </StarContainer>
                             </ProfileContainer>
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
@@ -275,13 +276,13 @@ export default class RatingContainer extends React.Component {
                                         borderRadius:'50%',
                                         marginBottom:'12px',
                                 }}/>
-                                <flexBoxCenter>
+                                <StarContainer>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/star.png"/>
                                     <Star src="assets/img/half_star.png"/>
-                                </flexBoxCenter>
+                                </StarContainer>
                             </ProfileContainer>
                                 <OrangeVerticalLine/>
                                 <CommentContainer>

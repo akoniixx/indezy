@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { changeLocale } from 'Redux/actions';
+import { changeLocale , toggleModal, openModal } from 'Redux/actions';
 import Media from 'react-media';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -21,7 +21,7 @@ import * as utils from 'Utils';
 import { screenWidth } from 'Constants/defaultValues';
 import lang from 'Lang';
 import { Dropdown, Menu } from 'antd';
-
+import LoginModal from 'Components/LoginModal';
 const NavItem = styled(ni)`
 padding: 2rem 0.5rem 0 0.5rem;
 `;
@@ -34,6 +34,7 @@ class NavigationBar extends Component {
         const nav = strings.nav;
         const changeLocale = this.props.changeLocale;
         const onNavItemClick = this.props.onNavItemClick;
+        const { isOpen, openModal } = this.props;
 
         return (
             <Nav>
@@ -117,10 +118,11 @@ class NavigationBar extends Component {
                 </NavItemsGroup>
 
                 <Media query={{minWidth: screenWidth.desktop.minWidth}}>
-                    <Button onClick={(e) => { utils.changePath(history, urls.nlp); }} >
+                    <Button onClick={() => openModal('loginModal')} >
                         <span>Login</span>
                     </Button>
                 </Media>
+                <LoginModal/>
             </Nav>
         );
     }
@@ -173,8 +175,9 @@ class NavBarMobile extends Component {
         );
     }
 }
-const mapStateToProps = ({ settings }) => ({
-    locale: settings.locale
-});
+const mapStateToProps = ({ settings , modals }) => (
+    { locale: settings.locale },
+    { isOpen: modals.loginModal }
+);
 
-export default connect(mapStateToProps, { changeLocale })(NavigationBar);
+export default connect(mapStateToProps, { changeLocale , toggleModal , openModal })(NavigationBar);
