@@ -6,6 +6,7 @@ import { store } from 'Redux/store';
 import MainApp from 'Routes';
 import 'antd/dist/antd.css';
 import 'Assets/css/style.css';
+import 'Assets/css/bootstrap.min.css';
 
 class App extends Component {
     render() {

@@ -5,3 +5,7 @@
 .ant-dropdown li:hover {
     background-color: #F8F3EF;
 }
+
+.ant-Button li{
+    color: #F47529;
+}

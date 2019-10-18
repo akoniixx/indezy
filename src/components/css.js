@@ -60,7 +60,7 @@ html {
 }
 body {
     color: ${colors.guest.text};
-    background-image: url('/assets/img/test2.svg') !important;
+    background-image: !important;
     background-repeat: no-repeat;
     background-size: cover;
 }

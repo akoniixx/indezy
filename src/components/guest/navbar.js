@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { margin,padding } from 'Constants/defaultValues';
 
 import {flexBox} from 'Containers/flexbox';
 import { Prototype, NavItemsGroup as ng, NavItem as ni, NavSpeechItem as Ns,NavSpeechItemBold as NsB } from '../navbar';
@@ -28,11 +29,16 @@ box-shadow: 0 2px 7px 0 ${colors.shadow.nav};
 `;
 
 export const Logo = styled.img`
-height: 55px;
-width: auto;
+    padding: .3rem 0;
+    height: 70px;
+    width: auto;
+    object-fit: contain;
 `;
 
-export const NavItemsGroup = ng;
+export const NavItemsGroup = styled(ng)`
+flex-grow: 1;
+padding: 0 5%;
+`;
 
 export const NavItem = styled(ni)`
 color: ${colors.text.navItem};
