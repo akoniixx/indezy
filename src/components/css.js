@@ -66,6 +66,17 @@ body {
 }
 `;
 
+export const GlobalStyleMain = createGlobalStyle`
+${rootCSS}
+html {
+    color: ${colors.guest.text};
+}
+body {
+    color: ${colors.guest.text};
+    background-color: #ECECEE;
+}
+`;
+
 export const GlobalStyleCP = createGlobalStyle`
 ${rootCSS}
 html {
