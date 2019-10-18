@@ -6,7 +6,7 @@ import Main from './main';
 
 class App extends Component {
     render() {
-        const { match } = this.props;
+        const { match, user } = this.props;
         return (
             <Fragment>
                 <Switch>
