@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "antd": "^3.19.2",
+    "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "chartjs-plugin-annotation": "^0.5.7",
     "firebase": "^6.3.0",
