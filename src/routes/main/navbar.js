@@ -9,7 +9,7 @@ const Navigationbar = ({ history }) => {
         <Nav>
             <Logo
                 onClick={() => changePath(history, "/")}
-                src="/assets/img/IndezyLogo.svg"
+                src="/assets/img/indezy_inner_logo.svg"
             />
             <RightMenu>
                 <NotiButton
