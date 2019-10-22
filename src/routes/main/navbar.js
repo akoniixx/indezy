@@ -83,6 +83,7 @@ padding: 0 20px;
 `;
 
 const LeftButton = styled.div`
+cursor: pointer;
 height: 60px;
 width: 60px;
 background: transparent linear-gradient(225deg, #FCB116 0%, #F47529 100%) 0% 0% no-repeat padding-box;
