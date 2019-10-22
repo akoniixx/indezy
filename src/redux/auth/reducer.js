@@ -5,15 +5,16 @@ const INIT_STATE = {
 };
 
 const mockUser = {
-    email: "ben@ezygroup.co",
+    email: "@ezygroup.co",
     password: "1234"
 }
 
 export default (state = INIT_STATE, action) => {
+    state = { ...state, message: "" };
     switch (action.type) {
         case LOGIN:
             const user = action.payload;
-            if (user.email != mockUser.email || user.password != mockUser.password) {
+            if (!user.email.includes(mockUser.email) || user.password != mockUser.password) {
                 return { ...state, message: 'invalid email or password' };
             }
             localStorage.setItem('user', user.email);
