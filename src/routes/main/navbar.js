@@ -39,9 +39,13 @@ justify-content: space-between;
 padding: .7rem 0 .7rem 0;
 height: 60px;
 font-size: .75rem;
+position: relative;
 `;
 
 const Logo = styled.img`
+position: absolute;
+left: 50%;
+transform: translate(-50%, 0);
 height: fit-content;
 width: auto;
 object-fit: contain;
