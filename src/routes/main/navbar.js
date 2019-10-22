@@ -1,71 +1,105 @@
 import React from 'react';
 import styled from 'styled-components';
 import Avatar from 'react-avatar';
+import { connect } from 'react-redux';
 import { changePath } from 'Utils';
 import { Prototype as NavPrototype } from 'Components/navbar';
 
-const Navigationbar = ({ history }) => {
+const Navigationbar = ({ history, user }) => {
     return (
         <Nav>
+            <LeftMenu>
+                <SidebarButton>
+                    <SidebarIcon
+                        src="/assets/img/side-bar-icon.svg"
+                    />
+                </SidebarButton>
+                <Searchbox placeholder="Search" />
+            </LeftMenu>
             <Logo
                 onClick={() => changePath(history, "/")}
-                src="/assets/img/IndezyLogo.svg"
+                src="/assets/img/indezy_inner_logo.svg"
             />
             <RightMenu>
-                <NotiButton
-                    src="/assets/img/bell.svg"
-                />
-                <Avatar name="indezy" size={40} round />
-                <DropdownGroup>
-                    <span>Indezy</span>
-                    <small>&#9660;</small>
-                </DropdownGroup>
+                <Avatar name={user} size={40} round />
+                <span>{user}</span>
             </RightMenu>
         </Nav>
     );
 }
 
-export default Navigationbar;
+const mapStateToProps = ({ auth }) => ({ user: auth.user });
+
+export default connect(mapStateToProps)(Navigationbar);
 
 const Nav = styled(NavPrototype)`
-background-color: #1D1E62;
+background: linear-gradient(90deg, #151A2B, #181B2C);
+box-shadow: 0px 3px 6px #0000009F;
+opacity: 1;
+backdrop-filter: blur(30px);
+-webkit-backdrop-filter: blur(30px);
 color: white;
-box-shadow: 0 2px 7px 0 rgba(95, 49, 9, 0.45);
-justify-content: center;
+justify-content: space-between;
+padding: .7rem 0 .7rem 0;
+height: 60px;
+font-size: .75rem;
 position: relative;
 `;
 
 const Logo = styled.img`
-padding: .3rem 0;
-height: 70px;
+position: absolute;
+left: 50%;
+transform: translate(-50%, 0);
+height: fit-content;
 width: auto;
 object-fit: contain;
 `;
 
 const RightMenu = styled.div`
-position: absolute;
-right: 72px;
+margin-right: 72px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-width: 200px;
 & > *:not(:first-child) {
     margin-left: 10px;
 }
+margin-left: 10px;
+margin-right: 72px;
 `;
 
-const NotiButton = styled.img`
-cursor: pointer;
-width: auto;
-height: 30px;
-`;
-
-const DropdownGroup = styled.div`
-cursor: pointer;
+const LeftMenu = styled.div`
 display: flex;
-align-items: baseline;
-& > :last-child {
-    margin-left: 5px;
-    font-size: 65%;
+align-items: center;
+& > *:not(:first-child) {
+    margin-left: 20px;
 }
+`;
+
+const Searchbox = styled.input`
+height: 35px;
+width: 250px;
+background: black;
+border-radius: 10px;
+padding: 0 20px;
+::placeholder {
+    color: #727272;
+}
+`;
+
+const SidebarButton = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+height: 60px;
+width: 60px;
+background: transparent linear-gradient(225deg, #FCB116 0%, #F47529 100%) 0% 0% no-repeat padding-box;
+opacity: 1;
+`;
+
+const SidebarIcon = styled.img`
+height: inherit;
+width: auto;
+object-fit: contain;
+padding: 15px;
 `;

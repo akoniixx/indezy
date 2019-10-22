@@ -46,10 +46,16 @@ html {
 }
 
 body {
-    font-family: sukhumvit !important;
+    font-family: Helvetica !important;
     margin: 0;
     display: flex;
     flex-direction: column;
+}
+input {
+    border: none;
+}
+input:focus {
+    outline: none;
 }
 `;
 
