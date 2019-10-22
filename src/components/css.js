@@ -51,6 +51,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+input:focus {
+    outline: none;
+}
 `;
 
 export const GlobalStyleGuest = createGlobalStyle`
