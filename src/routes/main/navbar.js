@@ -9,7 +9,7 @@ const Navigationbar = ({ history, user }) => {
     return (
         <Nav>
             <LeftMenu>
-                <LeftButton />
+                <SidebarButton />
                 <Searchbox placeholder="Search" />
             </LeftMenu>
             <Logo
@@ -82,7 +82,7 @@ padding: 0 20px;
 }
 `;
 
-const LeftButton = styled.div`
+const SidebarButton = styled.div`
 cursor: pointer;
 height: 60px;
 width: 60px;
