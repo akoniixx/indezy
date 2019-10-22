@@ -51,6 +51,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+input {
+    border: none;
+}
 input:focus {
     outline: none;
 }
