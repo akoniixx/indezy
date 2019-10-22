@@ -9,7 +9,11 @@ const Navigationbar = ({ history, user }) => {
     return (
         <Nav>
             <LeftMenu>
-                <SidebarButton />
+                <SidebarButton>
+                    <SidebarIcon
+                        src="/assets/img/side-bar-icon.svg"
+                    />
+                </SidebarButton>
                 <Searchbox placeholder="Search" />
             </LeftMenu>
             <Logo
@@ -83,9 +87,19 @@ padding: 0 20px;
 `;
 
 const SidebarButton = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
 cursor: pointer;
 height: 60px;
 width: 60px;
 background: transparent linear-gradient(225deg, #FCB116 0%, #F47529 100%) 0% 0% no-repeat padding-box;
 opacity: 1;
+`;
+
+const SidebarIcon = styled.img`
+height: inherit;
+width: auto;
+object-fit: contain;
+padding: 15px;
 `;
