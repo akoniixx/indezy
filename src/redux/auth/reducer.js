@@ -1,7 +1,9 @@
 import { LOGIN, LOGOUT } from 'Constants/actionTypes';
 
 const INIT_STATE = {
-    user: localStorage.getItem('user') || null
+    user: {
+        email: localStorage.getItem('user') || null
+    }
 };
 
 const mockUser = {

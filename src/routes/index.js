@@ -7,11 +7,15 @@ import Main from './main';
 class App extends Component {
     render() {
         const { match, user } = this.props;
+        let isLoggedIn = false;
+        try{
+            isLoggedIn = user.email != null;
+        }catch(err){}
         return (
             <Fragment>
                 <Switch>
                     {/* Register your global routes here. */}
-                    <Route path={`${match.url}`} component={user ? Main : Guest} />
+                    <Route path={`${match.url}`} component={isLoggedIn ? Main : Guest} />
                 </Switch>
             </Fragment>
         );
