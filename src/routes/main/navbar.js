@@ -8,30 +8,37 @@ import { Prototype as NavPrototype } from 'Components/navbar';
 const Navigationbar = ({ history, user }) => {
     return (
         <Nav>
+            <LeftMenu>
+                <LeftButton />
+                <Searchbox placeholder="Search" />
+            </LeftMenu>
             <Logo
                 onClick={() => changePath(history, "/")}
                 src="/assets/img/indezy_inner_logo.svg"
             />
             <RightMenu>
                 <Avatar name={user} size={40} round />
-                <Username>{user}</Username>
+                <span>{user}</span>
             </RightMenu>
         </Nav>
     );
 }
 
-const mapStateToProps = ({ auth }) => ({ user: auth.user});
+const mapStateToProps = ({ auth }) => ({ user: auth.user });
 
 export default connect(mapStateToProps)(Navigationbar);
 
 const Nav = styled(NavPrototype)`
-background-color: #050617;
+background: linear-gradient(90deg, #151A2B, #181B2C);
+box-shadow: 0px 3px 6px #0000009F;
+opacity: 1;
+backdrop-filter: blur(30px);
+-webkit-backdrop-filter: blur(30px);
 color: white;
-box-shadow: 0 2px 7px 0 rgba(95, 49, 9, 0.45);
-justify-content: center;
-position: relative;
+justify-content: space-between;
 padding: .7rem 0 .7rem 0;
 height: 60px;
+font-size: .75rem;
 `;
 
 const Logo = styled.img`
@@ -41,8 +48,7 @@ object-fit: contain;
 `;
 
 const RightMenu = styled.div`
-position: absolute;
-right: 72px;
+margin-right: 72px;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -53,6 +59,28 @@ margin-left: 10px;
 margin-right: 72px;
 `;
 
-const Username = styled.div`
-font-size: .75rem;
+const LeftMenu = styled.div`
+display: flex;
+align-items: center;
+& > *:not(:first-child) {
+    margin-left: 20px;
+}
+`;
+
+const Searchbox = styled.input`
+height: 35px;
+width: 250px;
+background: black;
+border-radius: 10px;
+padding: 0 20px;
+::placeholder {
+    color: #727272;
+}
+`;
+
+const LeftButton = styled.div`
+height: 60px;
+width: 60px;
+background: transparent linear-gradient(225deg, #FCB116 0%, #F47529 100%) 0% 0% no-repeat padding-box;
+opacity: 1;
 `;
