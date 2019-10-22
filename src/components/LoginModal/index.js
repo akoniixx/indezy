@@ -51,12 +51,8 @@ class LoginModal extends Component {
     }
 
   };
-  getDerivedStateFromProps(nextProps) {
-    console.log("n", nextProps)
-  }
   render() {
     const { isOpen, toggleModal, openModal, auth, login } = this.props;
-    console.log("auth", auth)
     return (
       <Fragment>
         <Modal isOpen={isOpen} toggle={() => toggleModal('loginModal')} backdrop={true} className='loginModal'>

@@ -1,36 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 import Avatar from 'react-avatar';
+import { logout } from 'Redux/actions';
 import { connect } from 'react-redux';
 import { changePath } from 'Utils';
 import { Prototype as NavPrototype } from 'Components/navbar';
 
-const Navigationbar = ({ history, user }) => {
-    return (
-        <Nav>
-            <LeftMenu>
-                <SidebarButton>
-                    <SidebarIcon
-                        src="/assets/img/side-bar-icon.svg"
-                    />
-                </SidebarButton>
-                <Searchbox placeholder="Search" />
-            </LeftMenu>
-            <Logo
-                onClick={() => changePath(history, "/")}
-                src="/assets/img/indezy_inner_logo.svg"
-            />
-            <RightMenu>
-                <Avatar name={user} size={40} round />
-                <span>{user}</span>
-            </RightMenu>
-        </Nav>
-    );
-}
+const Navigationbar = ({ history, user, logout }) => (
+    <Nav>
+        <LeftMenu>
+            <SidebarButton>
+                <SidebarIcon
+                    src="/assets/img/side-bar-icon.svg"
+                />
+            </SidebarButton>
+            <Searchbox placeholder="Search" />
+        </LeftMenu>
+        <Logo
+            onClick={() => changePath(history, "/")}
+            src="/assets/img/indezy_inner_logo.svg"
+        />
+        <RightMenu onClick={() => logout()}>
+            <Avatar name={user || ""} size={40} round />
+            <span>{user || "Indezy"}</span>
+        </RightMenu>
+    </Nav>
+);
 
-const mapStateToProps = ({ auth }) => ({ user: auth.user });
+const mapStateToProps = ({ auth }) => ({ user: auth.user.email });
 
-export default connect(mapStateToProps)(Navigationbar);
+export default connect(mapStateToProps, { logout })(Navigationbar);
 
 const Nav = styled(NavPrototype)`
 background: linear-gradient(90deg, #151A2B, #181B2C);

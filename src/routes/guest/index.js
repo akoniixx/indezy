@@ -8,6 +8,7 @@ import Footer from './footer';
 import { GlobalStyleGuest } from 'Components/css';
 import urls from 'Constants/urls';
 import LandingPage from 'Containers/blinkLandingPage';
+import { closeModal } from 'Redux/actions';
 
 class MainApp extends Component {
 
@@ -19,12 +20,16 @@ class MainApp extends Component {
     }
 
     onNavItemClick(ref, event) {
-        event.preventDefault(); 
+        event.preventDefault();
         scrollToComponent(
             this[ref],
             {}
         );
         console.log("scrolling", ref);
+    }
+
+    componentDidMount() {
+        this.props.closeModal("loginModal");
     }
 
     render() {
@@ -51,4 +56,4 @@ const mapStateToProps = ({ settings }) => (
     { locale: settings.locale }
 );
 
-export default connect(mapStateToProps)(MainApp);
+export default connect(mapStateToProps, { closeModal })(MainApp);
