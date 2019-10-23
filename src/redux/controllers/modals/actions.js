@@ -20,3 +20,4 @@ export const toggleModal = (key) => ({
     type: TOGGLE_MODAL,
     payload: { key }
 });
+

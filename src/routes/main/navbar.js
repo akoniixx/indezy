@@ -8,6 +8,7 @@ import { Prototype as NavPrototype } from 'Components/navbar';
 
 const Navigationbar = ({ history, user, logout }) => (
     <Nav>
+    {console.log("Nav_auth", user)}
         <LeftMenu>
             <SidebarButton>
                 <SidebarIcon

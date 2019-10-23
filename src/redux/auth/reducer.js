@@ -19,11 +19,13 @@ export default (state = INIT_STATE, action) => {
             if (!user.email.includes(mockUser.email) || user.password != mockUser.password) {
                 return { ...state, message: 'invalid email or password' };
             }
-            localStorage.setItem('user', user.email);
+              localStorage.setItem('user', user.email);
             return {
                 ...state,
-                user: action.payload
-            }
+                user: { email: user.email },
+                message: "SUCCESS"
+            }   
+            
         case LOGOUT:
             localStorage.removeItem('user');
             return {

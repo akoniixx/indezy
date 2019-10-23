@@ -28,8 +28,7 @@ export default class SlideView extends React.Component {
     render(){
         return (
             <div className="slide-container" style={{
-                width: '100%',
-                zIndex: '2'
+                width: '100%'
             }}>
                 <Slide {...properties}>
                     <div className="each-slide" style={{

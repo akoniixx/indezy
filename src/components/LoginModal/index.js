@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Modal, ModalHeader, ModalBody, Row, Form, Label, Input, Button, Container } from 'reactstrap'
-import { toggleModal, openModal, login } from 'Redux/actions';
+import { toggleModal, openModal, login, closeModal } from 'Redux/actions';
 import { connect } from 'react-redux';
 
 const initialState = {
@@ -52,7 +52,8 @@ class LoginModal extends Component {
 
   };
   render() {
-    const { isOpen, toggleModal, openModal, auth, login } = this.props;
+    const { isOpen, toggleModal, openModal, auth, login, closeModal } = this.props;
+    console.log("auth", auth )
     return (
       <Fragment>
         <Modal isOpen={isOpen} toggle={() => toggleModal('loginModal')} backdrop={true} className='loginModal'>
@@ -62,7 +63,7 @@ class LoginModal extends Component {
                         </ModalHeader>
           </div>
           <ModalBody>
-            <Form onSubmit={(e) => { e.preventDefault(); login(this.state.email, this.state.password) }}>
+            <Form onSubmit={(e) => { e.preventDefault(); login(this.state.email, this.state.password);/* closeModal('loginModal'); */}}>
               <div class="form-group">
                 <br></br>
                 <Label for="exampleInputEmail1">Email address</Label>
@@ -105,4 +106,4 @@ const mapStateToProps = ({ modals, auth }) => (
   { isOpen: modals.loginModal, auth: auth }
 );
 
-export default connect(mapStateToProps, { toggleModal, openModal, login })(LoginModal);
+export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal })(LoginModal);
