@@ -28,9 +28,9 @@ class MainApp extends Component {
         console.log("scrolling", ref);
     }
 
-    componentDidMount() {
-        this.props.closeModal("loginModal");
-    }
+    // componentDidMount() {
+    //     this.props.closeModal("loginModal");
+    // }
 
     render() {
         const { match, locale, history } = this.props;
