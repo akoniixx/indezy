@@ -32,8 +32,8 @@ export default class SlideView extends React.Component {
             }}>
                 <Slide {...properties}>
                     <div className="each-slide" style={{
-                        backgroundImage: 'linear-gradient(to bottom right, #616161, #000000)',
-                        height:'500px',
+                        backgroundImage: 'linear-gradient(to bottom right, #0a0a0a, #000000)',
+                        height:'700px',
                         display:'flex',
                         justifyContent:'flex-end',
                         alignItems:'center'
@@ -79,8 +79,8 @@ export default class SlideView extends React.Component {
                     </div>
 
                     <div className="each-slide" style={{
-                        backgroundImage: 'linear-gradient(to bottom right, #616161, #000000)',
-                        height:'500px',
+                        backgroundImage: 'linear-gradient(to bottom right, #0a0a0a, #000000)',
+                        height:'700px',
                         display:'flex',
                         justifyContent:'flex-end',
                         alignItems:'center'
