@@ -20,7 +20,7 @@ const properties = {
   indicators: false,
   arrows: false,
   onChange: (oldIndex, newIndex) => {
-    console.log(`slide transition from ${oldIndex-1} to ${newIndex-1}`);
+    // console.log(`slide transition from ${oldIndex-1} to ${newIndex-1}`);
   }
 }
 
@@ -28,7 +28,8 @@ export default class SlideView extends React.Component {
     render(){
         return (
             <div className="slide-container" style={{
-                width: '100%'
+                width: '100%',
+                zIndex: '2'
             }}>
                 <Slide {...properties}>
                     <div className="each-slide" style={{

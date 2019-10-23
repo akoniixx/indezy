@@ -12,6 +12,7 @@ const colors = {
     }
 }
 
+
 const cssButton = css`
 ${roundButtonRadius}
 padding: 10px 20px 9px 20px;
@@ -36,4 +37,9 @@ ${cssButton}
 export const CancelButton = styled(Button)`
 ${roundButtonRadius}
 background-color: ${colors.buttons.cancel};
+`;
+
+export const DropdownButton = styled(Button)`
+background-color: ${colors.buttons.default};
+${cssButton}
 `;

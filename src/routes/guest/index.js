@@ -9,6 +9,7 @@ import { GlobalStyleGuest } from 'Components/css';
 import urls from 'Constants/urls';
 import LandingPage from 'Containers/blinkLandingPage';
 import { closeModal } from 'Redux/actions';
+import NewNavBar from 'Containers/NewNavBar';
 
 class MainApp extends Component {
 
@@ -37,9 +38,8 @@ class MainApp extends Component {
         return (
             <Fragment>
                 <GlobalStyleGuest />
-                <Headroom ref={(a) => { this.headroom = a }}>
-                    <NavigationBar onNavItemClick={this.onNavItemClick} history={history} />
-                </Headroom>
+
+                <NewNavBar onNavItemClick={this.onNavItemClick} history={history} />
                 <main className="main" ref={(e) => this.headroom = e}>
                     <Switch>
                         <Route path={`${match.url}`} render={props => <LandingPage {...props} reference={(ref, event) => this[ref] = event} />} history={history} />

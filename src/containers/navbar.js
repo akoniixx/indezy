@@ -39,7 +39,7 @@ class NavigationBar extends Component {
         return (
             <Nav>
                 <Logo onClick={(e) => { utils.changePath(history, urls.landingPage); }} 
-                src="/assets/img/Asset_2@3x.png" />
+                src="/assets/img/IndezyLogo-05.svg" />
 
                 <NavItemsGroup>
                     <Media query={{
