@@ -79,7 +79,20 @@ html {
 }
 body {
     color: ${colors.guest.text};
-    background-color: #ECECEE;
+    background: url(${({ background }) => background});
+    background-size: cover;
+    position: relative;
+    ::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        opacity: 0.8;
+        background: black;
+    }
 }
 `;
 
