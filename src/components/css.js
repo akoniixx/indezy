@@ -79,7 +79,8 @@ html {
 }
 body {
     color: ${colors.guest.text};
-    background-color: #ECECEE;
+    background: url(${({ background }) => background});
+    background-size: cover;
 }
 `;
 
