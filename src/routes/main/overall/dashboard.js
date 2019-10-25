@@ -13,6 +13,7 @@ const Dashboard = styled.div`
 padding: 20px 6% 0;
 display: flex;
 justify-content: center;
+flex-wrap: wrap;
 & > *:not(:first-child) {
     margin-left: 1%;
 }
