@@ -10,6 +10,7 @@ export const GET_STRINGS = "GET_STRINGS";
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
+export const CLOSE_ALL_MODALS = "CLOSE_ALL_MODALS"
 
 /* AUTH */
 export const LOGIN = "LOGIN";

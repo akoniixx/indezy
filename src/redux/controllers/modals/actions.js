@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_MODAL } from 'Constants/actionTypes';
+import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_MODAL, CLOSE_ALL_MODALS } from 'Constants/actionTypes';
 
 export const openModal = (key) => ({
     type: OPEN_MODAL,
@@ -21,3 +21,6 @@ export const toggleModal = (key) => ({
     payload: { key }
 });
 
+export const closeAllModals = () => ({
+    type: CLOSE_ALL_MODALS
+})

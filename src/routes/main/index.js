@@ -4,7 +4,8 @@ import scrollToComponent from 'react-scroll-to-component';
 import { Route, Switch } from 'react-router-dom';
 import { GlobalStyleMain as GlobalStyle } from 'Components/css';
 import Navigationbar from './navbar';
-import Point from 'Components/Point';
+import Image from 'Assets/img/main-bg.jpg';
+import Overall from './overall';
 
 class Main extends React.Component {
 
@@ -17,13 +18,14 @@ class Main extends React.Component {
         const { match, history } = this.props;
         return (
             <Fragment>
-                <GlobalStyle />
+                <GlobalStyle background={Image} />
                 <Headroom ref={x => this.headroom = x}>
                     <Navigationbar onNavItemClick={this.onNavItemClick} history={history} />
                 </Headroom>
                 <main>
-                    {/* <Switch>
-                    </Switch> */}
+                    <Switch>
+                        <Route path={match.url} component={Overall} />
+                    </Switch>
                 </main>
             </Fragment>
         );
