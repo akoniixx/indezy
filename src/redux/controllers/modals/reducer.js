@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_MODAL } from 'Constants/actionTypes';
+import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_MODAL, CLOSE_ALL_MODALS } from 'Constants/actionTypes';
 
 export default (state = {}, action) => {
     const { payload } = action;
@@ -7,6 +7,8 @@ export default (state = {}, action) => {
     let value = state[modalKey] || false;
     if (action.type == TOGGLE_MODAL) {
         value = !value;
+    }else if(action.type == CLOSE_ALL_MODALS){
+        return {};
     }
     switch (action.type) {
         case OPEN_MODAL:
