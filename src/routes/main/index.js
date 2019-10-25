@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import { GlobalStyleMain as GlobalStyle } from 'Components/css';
 import Navigationbar from './navbar';
 import Image from 'Assets/img/main-bg.jpg';
-import Dashboard from './dashboard';
+import Overall from './overall';
 
 class Main extends React.Component {
 
@@ -24,7 +24,7 @@ class Main extends React.Component {
                 </Headroom>
                 <main>
                     <Switch>
-                        <Route path={match.url} component={Dashboard} />
+                        <Route path={match.url} component={Overall} />
                     </Switch>
                 </main>
             </Fragment>

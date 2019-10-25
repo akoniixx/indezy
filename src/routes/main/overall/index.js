@@ -2,20 +2,20 @@ import React, { Fragment } from 'react';
 import Filter from './filter';
 import styled from 'styled-components';
 
-const DashboardWrapper = () => (
+const Overall = () => (
     <Fragment>
         <Filter />
         <PointSelectorMock />
-        <DashboardGraphs>
+        <Dashboard>
             Graphs da!!!!
-        </DashboardGraphs>
+        </Dashboard>
     </Fragment>
 );
 
-export default DashboardWrapper;
+export default Overall;
 
 const PointSelectorMock = () => (<div>Point Selector da!!!!</div>)
 
-const DashboardGraphs = styled.div`
+const Dashboard = styled.div`
 padding: 0 6%;
 `;
