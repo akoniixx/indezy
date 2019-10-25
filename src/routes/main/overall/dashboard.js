@@ -12,9 +12,12 @@ export default DashboardComponent;
 const Dashboard = styled.div`
 padding: 20px 6% 0;
 display: flex;
-justify-content: center;
 flex-wrap: wrap;
-& > *:not(:first-child) {
-    margin-left: 1%;
+margin: auto;
+& > * {
+    margin-bottom: 1%;
+    &:not(:nth-child(3n+1)) {
+        margin-left: 1%;
+    }
 }
 `;

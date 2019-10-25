@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default ({ columns = 3, available, value, unit, description, children }) => {
-    const width = 100 * (1.0 / +columns) - 1;
+    const width = (100 - +columns) * (1.0 / +columns);
     return (
         <Wrapper width={width}>
             <Status available={available} />
