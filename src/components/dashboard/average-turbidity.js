@@ -8,6 +8,6 @@ export default (props) => {
         description: 'Today Turbidity Average'
     }
     return (
-        <Prototype {...props}></Prototype>
+        <Prototype {...props} />
     );
 }

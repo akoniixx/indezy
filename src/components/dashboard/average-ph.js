@@ -7,6 +7,6 @@ export default (props) => {
         description: 'Today pH Average'
     }
     return (
-        <Prototype {...props}></Prototype>
+        <Prototype {...props} />
     );
 }
