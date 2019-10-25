@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default (props) => {
     props = {
         ...props,
-        description: 'Real time pH'
+        description: 'Realtime pH'
     }
     const ph = +props.value || 7;
     return (
