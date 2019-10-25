@@ -75,10 +75,10 @@ body {
 export const GlobalStyleMain = createGlobalStyle`
 ${rootCSS}
 html {
-    color: ${colors.guest.text};
+    color: white;
 }
 body {
-    color: ${colors.guest.text};
+    color: white;
     background: url(${({ background }) => background});
     background-size: cover;
     position: relative;
