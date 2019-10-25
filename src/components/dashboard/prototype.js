@@ -28,6 +28,7 @@ display: flex;
 flex-direction: column;
 height: fit-content;
 width: ${({ width }) => `${width}%`};
+min-width: 350px;
 `;
 
 const Status = styled.div`
