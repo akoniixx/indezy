@@ -37,7 +37,7 @@ const properties = {
   indicators: true,
   arrows: true,
   onChange: (oldIndex, newIndex) => {
-    console.log(`slide transition from ${oldIndex-1} to ${newIndex-1}`);
+    // console.log(`slide transition from ${oldIndex-1} to ${newIndex-1}`);
   }
 }
 

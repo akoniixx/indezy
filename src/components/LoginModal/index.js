@@ -151,4 +151,4 @@ const mapStateToProps = ({ modals, auth }) => (
   { isOpen: modals.loginModal, auth: auth }
 );
 
-export default connect(mapStateToProps, { toggleModal, openModal, login })(LoginModal);
+export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal })(LoginModal);

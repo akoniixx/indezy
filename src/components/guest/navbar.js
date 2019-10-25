@@ -23,9 +23,12 @@ const colors = {
 };
 
 export const NavigationBar = styled(Prototype)`
-background-color: ${colors.background.indezyBG};
+/* background-color: ${colors.background.indezyBG}; */
 color: ${colors.text.navItem};
 box-shadow: 0 2px 7px 0 ${colors.shadow.nav};
+top: 0;
+position: fixed;
+z-index: 2;
 `;
 
 export const Logo = styled.img`

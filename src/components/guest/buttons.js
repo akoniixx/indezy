@@ -12,6 +12,8 @@ const colors = {
     }
 }
 
+const dropdown = 'assets/img/hamburger.png';
+
 const cssButton = css`
 ${roundButtonRadius}
 padding: 10px 20px 9px 20px;
