@@ -26,7 +26,7 @@ export default (props) => {
 const GuageWrapper = styled.div`
 width: 100%;
 height: 80px;
-margin: 30px 10px;
+margin: auto 10px;
 display: flex;
 justify-content: center;
 & > *:not(:first-child) {
