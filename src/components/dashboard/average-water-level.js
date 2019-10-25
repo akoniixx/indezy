@@ -8,6 +8,6 @@ export default (props) => {
         description: 'Today Water Level Average'
     }
     return (
-        <Prototype {...props}></Prototype>
+        <Prototype {...props} />
     );
 }
