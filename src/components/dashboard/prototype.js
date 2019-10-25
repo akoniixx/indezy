@@ -26,7 +26,7 @@ padding: 1%;
 padding-bottom: calc(1% + 20px);
 display: flex;
 flex-direction: column;
-height: fit-content;
+height: auto;
 width: ${({ width }) => `${width}%`};
 min-width: 350px;
 `;
