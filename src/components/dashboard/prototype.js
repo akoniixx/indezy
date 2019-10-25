@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default ({ columns, available, value, unit, description, children }) => {
+export default ({ columns = 3, available, value, unit, description, children }) => {
     const width = 100 * (1.0 / +columns) - 1;
     return (
         <Wrapper width={width}>
