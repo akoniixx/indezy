@@ -12,6 +12,7 @@ const colors = {
     }
 }
 
+const dropdown = 'assets/img/hamburger.png';
 
 const cssButton = css`
 ${roundButtonRadius}
@@ -37,9 +38,4 @@ ${cssButton}
 export const CancelButton = styled(Button)`
 ${roundButtonRadius}
 background-color: ${colors.buttons.cancel};
-`;
-
-export const DropdownButton = styled(Button)`
-background-color: ${colors.buttons.default};
-${cssButton}
 `;

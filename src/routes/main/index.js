@@ -4,6 +4,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import { Route, Switch } from 'react-router-dom';
 import { GlobalStyleMain as GlobalStyle } from 'Components/css';
 import Navigationbar from './navbar';
+import Point from 'Components/Point';
 
 class Main extends React.Component {
 

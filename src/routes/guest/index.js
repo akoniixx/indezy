@@ -31,6 +31,7 @@ class MainApp extends Component {
 
     componentDidMount() {
         this.props.closeModal("loginModal");
+        this.props.closeModal("menuModal");
     }
 
     render() {
@@ -38,7 +39,6 @@ class MainApp extends Component {
         return (
             <Fragment>
                 <GlobalStyleGuest />
-
                 <NewNavBar onNavItemClick={this.onNavItemClick} history={history} />
                 <main className="main" ref={(e) => this.headroom = e}>
                     <Switch>

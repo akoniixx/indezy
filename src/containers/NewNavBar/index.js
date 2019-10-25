@@ -1,31 +1,30 @@
 import React, { useEffect, useState, Component, Fragment } from 'react';
-import { DropdownButton as Button } from 'Components/guest/buttons';
 import { changeLocale, toggleModal, openModal } from 'Redux/actions';
 import { connect } from 'react-redux';
-import LoginModal from 'Components/LoginModal';
+import MenuModal from 'Components/MenuModal';
 //import for styled
 import styled from 'styled-components';
-import {flexBoxColCenter,flexBoxCenter,flexBox} from 'Containers/flexbox';
-
+import { flexBoxColCenter, flexBoxCenter, flexBox } from 'Containers/flexbox';
 
 const NewNavBar = props => {
-    const {openModal} = props;
+    const { openModal } = props;
     const [Scrolled, setScrolled] = useState(true);
     const handler = () => window.pageYOffset <= 700 ? setScrolled(true) : setScrolled(false);
     useEffect(() => {
-		window.addEventListener('scroll', handler);
-		return () => window.removeEventListener('scroll', handler);
+        window.addEventListener('scroll', handler);
+        return () => window.removeEventListener('scroll', handler);
     }, []);
-    let img = 'assets/img/';
-    Scrolled ?  img = img + 'IndezyLogo-05.svg' : img = img + 'IndezyLogo.svg'
+    let logoImg = 'assets/img/';
+    let Hamburger = 'assets/img/';
+    Scrolled ? logoImg = logoImg + 'IndezyLogo-05.svg' : logoImg = logoImg + 'IndezyLogo.svg'
+    Scrolled ? Hamburger = Hamburger + 'hamburger.png' : Hamburger = Hamburger + 'hamburgerGray.png'
     return (
         <Fragment>
             <Wrapper Scrolled={Scrolled}>
                 <NavContainer>
-                    <Logo src={img} />
-                    <Button onClick={() => openModal('loginModal')}>Menu</Button>
-                    <Logo src="assets/img/hamburger.png" />
-                    <LoginModal />
+                    <Logo src={logoImg} />
+                    <DropdownButton src={Hamburger} onClick={() => openModal('menuModal')} />
+                    <MenuModal/>
                 </NavContainer>
             </Wrapper>
         </Fragment>
@@ -34,7 +33,7 @@ const NewNavBar = props => {
 
 
 const mapStateToProps = ({ modals }) => (
-    { isOpen: modals.loginModal }
+    { isOpen: modals.menuModal, isOpen: modals.loginModal }
 );
 
 export default connect(mapStateToProps, { toggleModal, openModal })(NewNavBar);
@@ -45,7 +44,7 @@ position: fixed;
 z-index: 2;
 width: 100%;
 /* background-image: linear-gradient(#FFFFFF, #E3E3E3, #E3E3E3); */
-background-color: ${({Scrolled})=>Scrolled ? 'blur(4px)' : 'rgb(255,255,255, 0.95)'};
+background-color: ${({ Scrolled }) => Scrolled ? 'blur(4px)' : 'rgb(255,255,255, 0.95)'};
 height: 70px;
 /* blur */
 `;
@@ -55,11 +54,13 @@ justify-content: space-between;
 width: 80%;
 height: 70%;
 `;
+
 export const Logo = styled.img`
 height: 100%;
+cursor: pointer;
 `;
 
-export const DropdownButton = styled.button`
-width:100px;
-height:80px;
+export const DropdownButton = styled.img`
+height: 100%;
+cursor: pointer;
 `;
