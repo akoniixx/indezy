@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Modal, ModalHeader, ModalBody, Row, Form, Label, Input, Button, Container, Nav, NavItem, NavLink } from 'reactstrap'
-import { toggleModal, openModal, login } from 'Redux/actions';
+import { toggleModal, openModal, login, closeModal } from 'Redux/actions';
 import { connect } from 'react-redux';
 import { Col } from 'antd';
 

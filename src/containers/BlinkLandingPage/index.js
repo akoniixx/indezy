@@ -15,7 +15,6 @@ import {
 import SlideShow from 'Components/SlideShow';
 import HoverSideBar from 'Components/HoverSideBar';
 import RatingContainer from 'Components/RatingContainer';
-import Point from 'Components/Point';
 
 class blinkLandingPage extends Component {
     constructor(props) {
@@ -28,7 +27,6 @@ class blinkLandingPage extends Component {
             <Fragment>
                 <ContainerLine>
                     <SlideShow/>
-                    <Point/>
                     <HoverSideBar/>
                     <ContainerWrapper style={{
                         backgroundImage: 'linear-gradient(to bottom, #000000 0%, #000066 100%)',

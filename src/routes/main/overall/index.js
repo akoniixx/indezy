@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Filter from './filter';
 import Dashboard from './dashboard';
-
+import PointSelectorMock from 'Components/Point'
 const Overall = () => (
     <Fragment>
         <Filter />
@@ -11,5 +11,3 @@ const Overall = () => (
 );
 
 export default Overall;
-
-const PointSelectorMock = () => (<div>Point Selector da!!!!</div>)
