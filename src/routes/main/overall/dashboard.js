@@ -15,9 +15,6 @@ display: flex;
 flex-wrap: wrap;
 margin: auto;
 & > * {
-    margin-bottom: 1%;
-    &:not(:nth-child(3n+1)) {
-        margin-left: 1%;
-    }
+    margin: .5%;
 }
 `;
