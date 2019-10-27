@@ -6,22 +6,26 @@ export default ({ columns = 3, available, value, unit, description, children }) 
     return (
         <Wrapper width={width}>
             <Status available={available} />
-            <UnitRow>
-                <Value>{value}</Value>
-                {unit ? <Unit>{unit}</Unit> : ''}
-            </UnitRow>
-            <Description>{description}</Description>
-            {children}
+            <ContentWrapper>
+                <UnitRow>
+                    <Value>{value}</Value>
+                    {unit ? <Unit>{unit}</Unit> : ''}
+                </UnitRow>
+                <Description>{description}</Description>
+            </ContentWrapper>
+            {
+                children ?
+                    <ChartWrapper>
+                        {children}
+                    </ChartWrapper>
+                    : ''
+            }
         </Wrapper>
     );
 }
 
 const Wrapper = styled.div`
-background: #1B1C31 0% 0% no-repeat padding-box;
-box-shadow: 0px 3px 6px #000000C4;
-border-radius: 10px;
-backdrop-filter: blur(29px);
--webkit-backdrop-filter: blur(29px);
+background: transparent;
 padding: 1%;
 padding-bottom: calc(1% + 20px);
 display: flex;
@@ -29,6 +33,21 @@ flex-direction: column;
 height: auto;
 width: ${({ width }) => `${width}%`};
 min-width: 350px;
+position: relative;
+::before {
+    content: "";
+    background: #1B1C31 0% 0% no-repeat padding-box;
+    backdrop-filter: blur(29px);
+    position: absolute;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.78);  
+    border-radius: 10px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .8;
+}
 `;
 
 const Status = styled.div`
@@ -36,6 +55,22 @@ background-color: ${({ available }) => available ? '#00FF27' : '#FF0B0B'};
 width: 20px;
 height: 20px;
 border-radius: 10px;
+`;
+
+const ContentWrapper = styled.div`
+display: flex;
+flex-grow: 1;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px 0;
+`;
+
+const ChartWrapper = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 210px;
 `;
 
 const UnitRow = styled.div`
