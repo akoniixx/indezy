@@ -70,15 +70,19 @@ export function getCurrencyNumber(rawNumber) {
  */
 
 export const isCritical = (value, critical_min = null, critical_max = null) => {
-    if(value == null) return null;
-    if(critical_max == null){
+    if (value == null) return null;
+    if (critical_max == null) {
         //* critical zone is in [critical_max, infinite)
         return (value > critical_min);
     }
-    if(critical_min){
+    if (critical_min == null) {
         //* critical zone is (-infinite, critical_max]
         return (value <= critical_max);
     }
-    //* critical zone is [critical_min, critical_max]
-    return (value >= critical_min && value <= critical_max);
+    if (critical_min != null && critical_max != null) {
+        //* critical zone is [critical_min, critical_max]
+        return (value >= critical_min && value <= critical_max);
+    }
+    //* no critical zone, return false.
+    return false;
 }
