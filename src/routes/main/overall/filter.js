@@ -1,7 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export default (props) => (
+    <DivStyle>
+        <LeftGroup>
+            <Dashboard>Dashboard</Dashboard>
+            <SiteName>{props.point || "Point 1"}</SiteName>
+        </LeftGroup>
 
+        <Button>
+            <span>Today</span>
+            <Caret>&#8249;</Caret>
+        </Button>
+    </DivStyle>
+);
 
 const DivStyle = styled.div`
 padding: 0 100px;
@@ -50,26 +62,3 @@ border-radius: 10px;
 const Caret = styled.span`
 transform:rotate(270deg);
 `;
-
-
-
-export default (props) => {
-    return (
-        <DivStyle>
-            <LeftGroup>
-                <Dashboard>Dashboard</Dashboard>
-                <SiteName>Industrial 1</SiteName>
-            </LeftGroup>
-
-            <Button>
-                <span>Today</span>
-                <Caret>&#8249;</Caret>
-            </Button>
-            {/* <MyP>{caret}</MyP> */}
-        </DivStyle>
-        // <div style={divStyle}>
-        //     {caret}
-        // </div>
-    );
-}
-

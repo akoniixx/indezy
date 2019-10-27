@@ -21,7 +21,7 @@ export default (props) => {
 
 const FaceWrapper = styled.div`
 width: 100%;
-margin: auto 10px;
+margin: auto 0;
 display: flex;
 justify-content: center;
 & > *:not(:first-child) {
