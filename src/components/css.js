@@ -46,7 +46,7 @@ html {
 }
 
 body {
-    font-family: Helvetica !important;
+    font-family: Helvetica Neue !important;
     margin: 0;
     display: flex;
     flex-direction: column;
