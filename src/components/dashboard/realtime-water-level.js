@@ -10,20 +10,30 @@ import { connect } from 'react-redux';
 const RealtimeWaterLevel = (props) => {
     props = {
         ...props,
-        value: props.value / 100,
         unit: 'Meters',
         fraction: 2,
         description: 'Realtime Water Level'
     }
+    //! Real value calculation
+    const { max_water_level = 156 } = props;
+    const distance = props.value;
+    const value = max_water_level - distance;
+    // console.log('dist', distance);
+    // console.log('max_level', max_water_level);
+    // console.log('waterlevel', value);
+    //! Real value calculation end
     //! Critical zone calculation
-    const { value } = props;
-    const { critical_min = null, critical_max = null, max_water_level = 156 } = props;
+    const { critical_min = null, critical_max = null } = props;
     const isInCriticalZone = !isCritical(value, critical_min, critical_max);
     console.log('Realtime Water Level', `Value is ${isInCriticalZone ? '' : 'not '}in critical zone`, critical_min, critical_max);
     //! Critical zone calculation end
     const height = 156; //chart height (px)
     const levelPercent = calculateDecimalPercentage(value, max_water_level);
-    const levelHeight = height * levelPercent;
+    const levelHeight = height * levelPercent / 100;
+    props = {
+        ...props,
+        value: value / 100
+    }
     return (
         <Prototype {...props}>
             <DistanceWrapper height={height}>
