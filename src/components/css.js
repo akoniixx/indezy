@@ -36,6 +36,34 @@ const rootCSS = css`
     font-weight: 400;
     font-display: fallback;
 }
+@font-face {
+    font-family: "Helveltica";
+    src: url("/assets/fonts/Helvetica.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Helveltica Neue";
+    src: url("/assets/fonts/HelveticaNeue.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/assets/fonts/Roboto-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Kanit";
+    src: url("/assets/fonts/Kanit-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+    font-display: fallback;
+}
 
 html {
     font-size: 16px;
