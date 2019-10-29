@@ -1,19 +1,30 @@
 import React, { Fragment , useEffect} from 'react';
 import styled from 'styled-components';
 import { flexBoxColCenter, flexBoxCenter, flexBox, flexBoxCol } from 'Containers/flexbox';
-import { toggleModal, openModal, login, closeModal } from 'Redux/actions';
+import { toggleModal, openModal, login, closeModal, setName, setRealTimePoint } from 'Redux/actions';
 import { connect } from 'react-redux';
 
+import * as firebaseRef from 'Constants/firebase';
+import { getFireBaseData } from 'Utils'
 
 
 const HoverSideBar = props => {
-    const { isOpen, toggleModal, openModal, closeModal } = props;
+    const { isOpen, toggleModal, openModal, closeModal, firebaseData } = props;
+    const { factoryName, setRealTimePoint } = props; //* firebase action 
+    console.log('firebaseData', firebaseData)
     console.log(isOpen, "fuck");
+    //* get firebade data
+    useEffect(() => {
+        getFireBaseData(firebaseRef.nameRef, factoryName)//* set factory name 
+        getFireBaseData(firebaseRef.pointRef, setRealTimePoint)//* set all point 
+    }, []);
     useEffect(() => {
         //Todo check 2 Modal to open only 1
     }, [isOpen['emailPopup'], isOpen['contactPopup']]);
     //* close page remove listener
     useEffect(() => {
+        getFireBaseData(firebaseRef.nameRef, factoryName)
+        getFireBaseData(firebaseRef.pointRef, setRealTimePoint)
         return () => window.removeEventListener('click', handlerClickEvent)
     }, []);
     //* add close modal click outside component listener
@@ -126,11 +137,13 @@ const HoverSideBar = props => {
     );
 }
 
-const mapStateToProps = ({ modals }) => (
-    { isOpen: modals }
+const mapStateToProps = ({ modals, firebase }) => (
+    { isOpen: modals,
+      firebaseData: firebase
+    }
 );
 
-export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal })(HoverSideBar);
+export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal, factoryName:setName, setRealTimePoint })(HoverSideBar);
 
 const HoverContainer = styled.div`
 position: fixed;
