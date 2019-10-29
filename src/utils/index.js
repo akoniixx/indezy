@@ -6,6 +6,17 @@ import firebase from 'firebase';
  */
 
 /**
+ * This function return value in percentage form.
+ * Algorithm is value / maxValue
+ * PS.: min value is zero.
+ * @param {Number} value Input value to calculate.
+ * @param {Number} maxValue value to calculate percentage with.
+ */
+const calculateDecimalPercentage = (value, maxValue) => {
+    return (+value / +maxValue);
+}
+
+/**
  * @param history current history props.
  * @param to target URL.
  */
@@ -56,6 +67,36 @@ export function getCurrencyNumber(rawNumber) {
             currency: 'THB'
         }
     );
+}
+
+/**
+ * This function returns true when value is in critical zone or returns false in vice versa.
+ * This function will return null if value is null or undefined.
+ * Critical bounds can be null so they will be set to default.
+ * In case critical value is greater than a value, set min with critical value and null the max one.
+ * In case critical value is less than a value, set min to null and set max with critical value.
+ * In case no critical value, set both critical values to null.
+ * @param {Number} value value to check 
+ * @param {Number} critical_min lower bound of critical point.
+ * @param {Number} critical_max upper bound of critical point.
+ */
+
+export const isCritical = (value, critical_min = null, critical_max = null) => {
+    if (value == null) return null;
+    if (critical_max == null) {
+        //* critical zone is in [critical_max, infinite)
+        return (value > critical_min);
+    }
+    if (critical_min == null) {
+        //* critical zone is (-infinite, critical_max]
+        return (value <= critical_max);
+    }
+    if (critical_min != null && critical_max != null) {
+        //* critical zone is [critical_min, critical_max]
+        return (value >= critical_min && value <= critical_max);
+    }
+    //* no critical zone, return false.
+    return false;
 }
 
 /**

@@ -1,13 +1,18 @@
 import React from 'react';
 import Prototype from './prototype';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { isCritical } from 'Utils';
 
-export default (props) => {
+const RealtimePH = (props) => {
     props = {
         ...props,
         description: 'Realtime pH'
     }
     const ph = +props.value || 7;
+    const { value, critical_min = null, critical_max = null } = props;
+    const isInCriticalZone = isCritical(value, critical_min, critical_max);
+    console.log('Realtime PH', `Value is ${isInCriticalZone ? '' : 'not '}in critical zone`, critical_min, critical_max);
     return (
         <Prototype {...props}>
             <GuageWrapper>
@@ -22,6 +27,14 @@ export default (props) => {
         </Prototype>
     );
 }
+
+//! In case of no redux settings yet, mock data into redux injection.
+const mapStateToProps = () => ({
+    critical_min: 0,
+    critical_max: 4
+});
+
+export default connect(mapStateToProps)(RealtimePH);
 
 const GuageWrapper = styled.div`
 width: 100%;

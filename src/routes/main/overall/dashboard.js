@@ -5,7 +5,7 @@ import AvgTurbid from 'Components/dashboard/average-turbidity';
 import AvgWL from 'Components/dashboard/average-water-level';
 import RealtimePH from 'Components/dashboard/realtime-ph';
 import RealtimeTurbid from 'Components/dashboard/realtime-turbidity';
-import RealtimeWater from 'Components/dashboard/distance-water';
+import RealtimeWater from 'Components/dashboard/realtime-water-level';
 
 
 const DashboardComponent = () => (
@@ -15,7 +15,7 @@ const DashboardComponent = () => (
         <AvgWL value="3.0" available />
         <RealtimePH value="7.0" available />
         <RealtimeTurbid value="500" available />
-        <RealtimeWater value="0.3" available />
+        <RealtimeWater value="30" available />
     </Dashboard>
 );
 

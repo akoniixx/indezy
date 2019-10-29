@@ -1,23 +1,34 @@
 import React from 'react';
 import Prototype from './prototype';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { isCritical } from 'Utils'
 
-export default (props) => {
+const RealtimeTurbidity = (props) => {
     props = {
         ...props,
         unit: 'NTUs',
         description: 'Realtime Turbidity'
     }
-    const { value } = props;
-    const critical = 1000;
+    const { value, critical_min = null, critical_max = null } = props;
+    const isInCriticalZone = isCritical(value, critical_min, critical_max);
+    console.log('Realtime Turbidity', `Value is ${isInCriticalZone ? '' : 'not '}in critical zone`, critical_min, critical_max);
     return (
         <Prototype {...props}>
             <FaceWrapper>
-                <Face src={`assets/img/${value > critical ? 'bad' : 'good'}-face.svg`} />
+                <Face src={`assets/img/${isInCriticalZone ? 'bad' : 'good'}-face.svg`} />
             </FaceWrapper>
         </Prototype>
     );
 }
+
+//! In case of no redux settings yet, mock data into redux injection.
+const mapStateToProps = () => ({
+    critical_min: 301,
+    critical_max: null
+});
+
+export default connect(mapStateToProps)(RealtimeTurbidity);
 
 const FaceWrapper = styled.div`
 width: 100%;
