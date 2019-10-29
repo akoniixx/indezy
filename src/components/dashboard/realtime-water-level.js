@@ -5,6 +5,7 @@ import { isCritical, calculateDecimalPercentage } from 'Utils';
 import { connect } from 'react-redux';
 
 //! This component value calculate in CENTIMETRES, so input value MUST be centimetre unit too.
+//! Critical zone calculation is (-infinite, critical_min) && (critical_max, infinite) so isCritical() can calculate inversion of critical zone only.
 
 const RealtimeWaterLevel = (props) => {
     props = {
