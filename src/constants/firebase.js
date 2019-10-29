@@ -31,9 +31,10 @@ const firebaseConfig = {
   const ref2 = database.ref().child('G001');
   const roundRef = ref2.child('Round');
 
-  ref2.on('value', snapshot=>{
-    console.log('ref', snapshot.val())
-  })
+  //* view all 
+  // ref1.on('value', snapshot=>{
+  //   console.log('ref', snapshot.val())
+  // })
 
   export {
     // auth,
