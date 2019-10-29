@@ -12,8 +12,8 @@ import firebase from 'firebase';
  * @param {Number} value Input value to calculate.
  * @param {Number} maxValue value to calculate percentage with.
  */
-const calculateDecimalPercentage = (value, maxValue) => {
-    return (+value / +maxValue);
+export const calculateDecimalPercentage = (value, maxValue) => {
+    return (+value / +maxValue * 100);
 }
 
 /**
