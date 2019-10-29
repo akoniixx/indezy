@@ -12,6 +12,7 @@ const RealtimeWaterLevel = (props) => {
         ...props,
         value: props.value / 100,
         unit: 'Meters',
+        fraction: 2,
         description: 'Realtime Water Level'
     }
     //! Critical zone calculation

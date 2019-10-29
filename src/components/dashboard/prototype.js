@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { getDisplayNumber } from 'Utils';
 
-export default ({ columns = 3, available, value, unit, description, children }) => {
+export default ({ columns = 3, available, value, unit, description, children, fraction = 1 }) => {
     const width = (100 - +columns) * (1.0 / +columns);
     return (
         <Wrapper width={width}>
             <Status available={available} />
             <ContentWrapper>
                 <UnitRow>
-                    <Value>{value}</Value>
+                    <Value>{getDisplayNumber(value, fraction)}</Value>
                     {unit ? <Unit>{unit}</Unit> : ''}
                 </UnitRow>
                 <Description>{description}</Description>

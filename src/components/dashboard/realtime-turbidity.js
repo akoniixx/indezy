@@ -8,6 +8,7 @@ const RealtimeTurbidity = (props) => {
     props = {
         ...props,
         unit: 'NTUs',
+        fraction: 0,
         description: 'Realtime Turbidity'
     }
     const { value, critical_min = null, critical_max = null } = props;
