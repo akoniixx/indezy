@@ -19,7 +19,7 @@ background-repeat: no-repeat;
 background-position: right;
 background-color: #1D1E62;
 position: relative;
-padding: ${margin.big}
+padding: ${margin.big};
 `;
 
 export const ContactFooter = styled.div`
@@ -28,7 +28,7 @@ flex-direction: column;
 align-self: flex-start;
 width: 300px;
 color: ${footerValue.footerText.color};
-flex-basis: 50%
+flex-basis: 50%;
 `;
 
 export const Copyright = styled.div`
@@ -36,19 +36,19 @@ position: absolute;
 bottom: 0;
 flex-basis: 70%;
 color: ${footerValue.footerText.color};
-margin-bottom: ${margin.xsmall}
+margin-bottom: ${margin.xsmall};
 `;
 
 export const FooterColContainer = styled(flexBoxColCenter)`
 `;
 
 export const FooterContainer = styled(flexBoxCenter)`
-flex-wrap: wrap
+flex-wrap: wrap;
 `;
 
 export const FooterHeaderText = styled.span`
 font-size: 1.5em;
-margin-bottom: ${margin.small}
+margin-bottom: ${margin.small};
 `;
 
 export const FooterIcon = styled.img`
