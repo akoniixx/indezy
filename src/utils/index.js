@@ -5,6 +5,17 @@ import _ from 'lodash';
  */
 
 /**
+ * This function return value in percentage form.
+ * Algorithm is value / maxValue
+ * PS.: min value is zero.
+ * @param {Number} value Input value to calculate.
+ * @param {Number} maxValue value to calculate percentage with.
+ */
+const calculateDecimalPercentage = (value, maxValue) => {
+    return (+value / +maxValue);
+}
+
+/**
  * @param history current history props.
  * @param to target URL.
  */
