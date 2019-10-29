@@ -1,6 +1,7 @@
 import React from 'react';
 import Prototype from './prototype';
 import styled from 'styled-components';
+import { isCritical } from 'Utils';
 
 export default (props) => {
     props = {
@@ -8,16 +9,20 @@ export default (props) => {
         unit: 'Meters',
         description: 'Realtime Water Level'
     }
-    // const { value } = props;
-    // const critical = 1000;
+    //! Critical zone calculation
+    const { value } = props;
+    const critical_min = 50;
+    const critical_max = 60;
+    const isInCriticalZone = !isCritical(value, critical_min, critical_max);
+    //! Critical zone calculation end
     const height = 156;
     const levelPercent = 56;
-    const levelHeight = height*levelPercent/100;
+    const levelHeight = height * levelPercent / 100;
     return (
         <Prototype {...props}>
-          <DistanceWrapper height={height}>
-           <Water height={levelHeight}/>
-           </DistanceWrapper>
+            <DistanceWrapper height={height}>
+                <Water height={levelHeight} />
+            </DistanceWrapper>
         </Prototype>
     );
 }
