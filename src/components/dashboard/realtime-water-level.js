@@ -51,7 +51,7 @@ height: ${props => props.height}px;
 const Water = styled.div`
 width: 168px;
 height: ${props => props.height}px;
-background-color:#297eae;
+background-image: linear-gradient(#2B90C4, #2C68A100);
 position:absolute;
 bottom:0;
 
