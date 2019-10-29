@@ -48,7 +48,7 @@ class Footer extends Component {
                                 <span style={{alignSelf: "center"}}>{strings.tel}</span>
                             </div><div style={{display: "flex"}}>
                                 <FooterIcon src='assets/img/mailIcon.png'/>
-                                <span>benchapon_sk@hotmail.com</span>
+                                <span>Indezy@gmail.com</span>
                             </div>
                         </ContactFooter>
                         <ContactFooter>

@@ -10,7 +10,10 @@ import {
     BlueVerticleLine,
     OrangeHorizonLine,
     OrangeVerticalLine,
-    Star
+    Star,
+    IntroduceText,
+    IntroduceText1,
+    IntroduceText2
 } from 'Components/BlinkLandingPage';
 import SlideShow from 'Components/SlideShow';
 import HoverSideBar from 'Components/HoverSideBar';
@@ -26,10 +29,15 @@ class blinkLandingPage extends Component {
         return (
             <Fragment>
                 <ContainerLine>
+                    <IntroduceText>
+                        <IntroduceText1>IoT to Business</IntroduceText1>
+                        <IntroduceText2>" REALTIME SYSTEM "</IntroduceText2>
+                    </IntroduceText>
                     <SlideShow/>
                     <HoverSideBar/>
                     <ContainerWrapper style={{
-                        backgroundImage: 'linear-gradient(to bottom, #000000 0%, #000066 100%)',
+                        backgroundImage: 'url(assets/img/network-3424070_1920.jpg)',
+                        backgroundPosition: 'center',
                     }}>
                         <Container>
                             <span style={{
@@ -43,47 +51,50 @@ class blinkLandingPage extends Component {
                             <SubContainer>
                                 <img src="assets/img/chip (1).png" style={{
                                     width: '100px',
-                                    height: '100px',
-                                    marginRight: '32px'
+                                    marginRight: '32px',
+                                    objectFit: 'contain'
                                 }}/>
                                 <OrangeVerticalLine/>
                                 <span style={{
-                                color:'#FFFFFF'
+                                color:'#FFFFFF',
+                                width:'100%',
                                 }}>
-                                    วิกิตัวแรกชื่อว่า WikiWikiWeb[1] สร้างโดย วอร์ด คันนิงแฮม เมื่อพ.ศ. 2537 สำหรับโครงการ Portland Pattern Repository ของเขา โดยได้เขียนโปรแกรมขึ้นด้วยภาษาเพิร์ลและติดตั้งลงที่เว็บ c2.com โดยชื่อของ วิกิ
+                                    1. สร้างมาเพื่อลดความซับซ้อนในการทำงานของระบบโรงงานในด้านต่างๆ และ เพิ่มประสิทธิภาพขึ้นถึง 80 %
                                 </span>
                             </SubContainer>
                             <SubContainer>
                                 <img src="assets/img/chip (1).png" style={{
                                     width: '100px',
-                                    height: '100px',
-                                    marginRight: '32px'
+                                    marginRight: '32px',
+                                    objectFit: 'contain'
                                 }}/>
                                 <OrangeVerticalLine/>
                                 <span style={{
-                                color:'#FFFFFF'
+                                color:'#FFFFFF',
+                                width:'100%',
                                 }}>
-                                    วิกิตัวแรกชื่อว่า WikiWikiWeb[1] สร้างโดย วอร์ด คันนิงแฮม เมื่อพ.ศ. 2537 สำหรับโครงการ Portland Pattern Repository ของเขา โดยได้เขียนโปรแกรมขึ้นด้วยภาษาเพิร์ลและติดตั้งลงที่เว็บ c2.com โดยชื่อของ วิกิ
+                                    2. ประหยัดเวลาในการทำงานของคนดูแลระบบของโรงงานอุตสาหกรรม ถึง 80 %
                                 </span>
                             </SubContainer>
                             <SubContainer>
                                 <img src="assets/img/chip (1).png" style={{
                                     width: '100px',
-                                    height: '100px',
-                                    marginRight: '32px'
+                                    marginRight: '32px',
+                                    objectFit: 'contain'
                                 }}/>
                                 <OrangeVerticalLine/>
                                 <span style={{
-                                color:'#FFFFFF'
+                                color:'#FFFFFF',
+                                width:'100%',
                                 }}>
-                                    วิกิตัวแรกชื่อว่า WikiWikiWeb[1] สร้างโดย วอร์ด คันนิงแฮม เมื่อพ.ศ. 2537 สำหรับโครงการ Portland Pattern Repository ของเขา โดยได้เขียนโปรแกรมขึ้นด้วยภาษาเพิร์ลและติดตั้งลงที่เว็บ c2.com โดยชื่อของ วิกิ
+                                    3. ทำเพื่อลดค่าใช้จ่ายต่างๆที่ไม่จำเป็น ถึง 50 %
                                 </span>
                             </SubContainer>
                         </Container>
                     </ContainerWrapper>
 
                     <ContainerWrapper style={{
-                        backgroundImage: 'linear-gradient(to bottom, #000066 0%, #000000 100%)',
+                        backgroundColor: '#050617',
                     }}>
                         <Container>
                             <span style={{
@@ -96,7 +107,7 @@ class blinkLandingPage extends Component {
                             </span>
                             <RowContainer>
                                 <SubColContainer>
-                                    <img src="assets/img/chip (1).png" style={{
+                                    <img src="assets/img/chip-white.png" style={{
                                         width: '100px',
                                         height: '100px',
                                         marginBottom: '32px'
@@ -105,11 +116,11 @@ class blinkLandingPage extends Component {
                                     <span style={{
                                         color:'#FFFFFF'
                                     }}>
-                                        วิกิตัวแรกชื่อว่า WikiWikiWeb[1] สร้างโดย วอร์ด คันนิงแฮม เมื่อพ.ศ. 2537 สำหรับโครงการ Portland Pattern Repository ของเขา โดยได้เขียนโปรแกรมขึ้นด้วยภาษาเพิร์ลและติดตั้งลงที่เว็บ c2.com โดยชื่อของ วิกิ
+                                        1. ระบบที่ปรับการทำงานของโรงงานในแต่ละ case ให้มีประสิทธิภาพมากขึ้น เช่น ระบบบัดบัดน้ำเสีย ระบบเครื่องจักรต่างๆ เป็นต้น
                                     </span>
                                 </SubColContainer>
                                 <SubColContainer>
-                                    <img src="assets/img/chip (1).png" style={{
+                                    <img src="assets/img/chip-white.png" style={{
                                         width: '100px',
                                         height: '100px',
                                         marginBottom: '32px'
@@ -118,11 +129,11 @@ class blinkLandingPage extends Component {
                                     <span style={{
                                         color:'#FFFFFF'
                                     }}>
-                                        วิกิตัวแรกชื่อว่า WikiWikiWeb[1] สร้างโดย วอร์ด คันนิงแฮม เมื่อพ.ศ. 2537 สำหรับโครงการ Portland Pattern Repository ของเขา โดยได้เขียนโปรแกรมขึ้นด้วยภาษาเพิร์ลและติดตั้งลงที่เว็บ c2.com โดยชื่อของ วิกิ
+                                        2. ลดความซับซ้อน ลดเวลาในการจัดการของระบบที่มีอยู่ เนื่องจากมีดูข้อมูลและแจ้งเตือนผ่านเว็ปแอพของเรา
                                     </span>
                                 </SubColContainer>
                                 <SubColContainer>
-                                    <img src="assets/img/chip (1).png" style={{
+                                    <img src="assets/img/chip-white.png" style={{
                                         width: '100px',
                                         height: '100px',
                                         marginBottom: '32px'
@@ -131,7 +142,7 @@ class blinkLandingPage extends Component {
                                     <span style={{
                                         color:'#FFFFFF'
                                     }}>
-                                        วิกิตัวแรกชื่อว่า WikiWikiWeb[1] สร้างโดย วอร์ด คันนิงแฮม เมื่อพ.ศ. 2537 สำหรับโครงการ Portland Pattern Repository ของเขา โดยได้เขียนโปรแกรมขึ้นด้วยภาษาเพิร์ลและติดตั้งลงที่เว็บ c2.com โดยชื่อของ วิกิ
+                                        3. ระบบที่ทำให้คุณ ลดค่าใช้จ่ายที่ไม่จำเป็นออก เช่น ค่าสารเคมีที่ลดลงหลังจากใช้ระบบ เป็นต้น
                                     </span>
                                 </SubColContainer>
                             </RowContainer>
@@ -139,11 +150,11 @@ class blinkLandingPage extends Component {
                     </ContainerWrapper>
 
                     <ContainerWrapper style={{
-                        backgroundImage: 'radial-gradient(#FFFFFF, #E3E3E3, #E3E3E3)',
+                        backgroundColor: '#050617'
                     }}>
                         <Container>
                             <span style={{
-                                color:'#000000',
+                                color:'#FFFFFF',
                                 fontSize:'2.5em',
                                 fontWeight:'Bold'
                             }}>
@@ -153,7 +164,7 @@ class blinkLandingPage extends Component {
                             <SubContainer>
                                 <span style={{
                                     fontSize:'4.5em',
-                                    color:'#4E5357',
+                                    color:'#FFFFFF',
                                     marginRight:'24px'
                                 }}>
                                     4.2
@@ -167,10 +178,10 @@ class blinkLandingPage extends Component {
                                 </RowContainer>
                             </SubContainer>
                             <span style={{
-                                color: '#B1B3B5',
+                                color: '#797979',
                                 fontSize: '1.3em'
                             }}>
-                                FROM 220 CUSTOMERS
+                                FROM 2 CUSTOMERS
                             </span>
                             <RowContainer style={{
                                 width: '80%',

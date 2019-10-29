@@ -1,6 +1,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import styled from 'styled-components';
+import { GlobalStyleMain as GlobalStyle } from 'Components/css';
  
 // styled
 const Item = styled.div`
@@ -32,100 +33,35 @@ export default class SlideView extends React.Component {
             }}>
                 <Slide {...properties}>
                     <div className="each-slide" style={{
-                        backgroundImage: 'linear-gradient(to bottom right, #0a0a0a, #000000)',
+                        backgroundImage: 'url(assets/img/main-bg.jpg)',
                         height:'700px',
                         display:'flex',
                         justifyContent:'flex-end',
-                        alignItems:'center'
+                        alignItems:'center',
                     }}>
-                        <div style={{
-                            margin:'64px',
-                            display:'flex',
-                            flexDirection:'column'
-                        }}>
-                            <span style={{
-                                color:'#FFFFFF',
-                                fontSize:'3.5em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                BUSSINESS
-                            </span>
-                            <span style={{
-                                color:'#FFFFFF',
-                                fontSize:'3.5em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                INTELLIGENCE
-                            </span>
-                            <span style={{
-                                color:'#00C3FD',
-                                fontSize:'6em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                " REALTIME
-                            </span>
-                            <span style={{
-                                color:'#00C3FD',
-                                fontSize:'6em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                SYSTEM "
-                            </span>
-                        </div>
+                        <div className="each-slide" style={{
+                            backgroundColor: '#000000',
+                            height:'700px',
+                            width:'100%',
+                            opacity: '0.8'
+                        }}/>
                     </div>
 
                     <div className="each-slide" style={{
-                        backgroundImage: 'linear-gradient(to bottom right, #0a0a0a, #000000)',
+                        backgroundImage: 'url(assets/img/light-1834289_1920.jpg)',
                         height:'700px',
                         display:'flex',
                         justifyContent:'flex-end',
                         alignItems:'center'
                     }}>
-                        <div style={{
-                            margin:'64px',
-                            display:'flex',
-                            flexDirection:'column'
-                        }}>
-                            <span style={{
-                                color:'#FFFFFF',
-                                fontSize:'3.5em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                BUSSINESS
-                            </span>
-                            <span style={{
-                                color:'#FFFFFF',
-                                fontSize:'3.5em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                INTELLIGENCE
-                            </span>
-                            <span style={{
-                                color:'#00C3FD',
-                                fontSize:'6em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                " REALTIME
-                            </span>
-                            <span style={{
-                                color:'#00C3FD',
-                                fontSize:'6em',
-                                fontWeight:'Bold',
-                                textAlign:'right'
-                            }}>
-                                SYSTEM "
-                            </span>
-                        </div>
+                        <div className="each-slide" style={{
+                                backgroundColor: '#000000',
+                                height:'700px',
+                                width:'100%',
+                                opacity: '0.8'
+                        }}/>
                     </div>
 
-                    
                 </Slide>
             </div>
         );

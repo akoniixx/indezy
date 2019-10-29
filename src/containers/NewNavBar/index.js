@@ -16,8 +16,8 @@ const NewNavBar = props => {
     }, []);
     let logoImg = 'assets/img/';
     let Hamburger = 'assets/img/';
-    Scrolled ? logoImg = logoImg + 'IndezyLogo-05.svg' : logoImg = logoImg + 'IndezyLogo.svg'
-    Scrolled ? Hamburger = Hamburger + 'hamburger.png' : Hamburger = Hamburger + 'hamburgerGray.png'
+    Scrolled ? logoImg = logoImg + 'IndezyLogo-05.svg' : logoImg = logoImg + 'square-logo-color.svg'
+    Scrolled ? Hamburger = Hamburger + 'white-hamburger.svg' : Hamburger = Hamburger + 'black-hamburger.svg'
     return (
         <Fragment>
             <Wrapper Scrolled={Scrolled}>
@@ -46,6 +46,7 @@ width: 100%;
 /* background-image: linear-gradient(#FFFFFF, #E3E3E3, #E3E3E3); */
 background-color: ${({ Scrolled }) => Scrolled ? 'blur(4px)' : 'rgb(255,255,255, 0.95)'};
 height: 70px;
+transition: 0.8s;
 /* blur */
 `;
 
@@ -61,6 +62,6 @@ cursor: pointer;
 `;
 
 export const DropdownButton = styled.img`
-height: 100%;
+height: 50%;
 cursor: pointer;
 `;

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import firebase from 'firebase';
 
 /**
  * This file stores functions that use globally in this project.
@@ -96,4 +97,20 @@ export const isCritical = (value, critical_min = null, critical_max = null) => {
     }
     //* no critical zone, return false.
     return false;
+}
+
+/**
+ * This function get value from firebase and set value by redux action.
+ * @param {ref} ref description field of db needs to access Ex. nameRef from firbase.js
+ * @param {function} action description get value to set in reducer case Ex. setRealTimePoint 
+ */
+export function getFireBaseData(ref, action){
+    //console.log("ref", ref)
+    ref.on('value', (snapshot) => {
+        action(snapshot.val())
+    });
+}
+
+export function offFireBaseData(ref){
+    ref.off()
 }

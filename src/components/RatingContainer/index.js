@@ -64,7 +64,7 @@ export default class RatingContainer extends React.Component {
                                 marginRight: '32px',
                                 width:'100px'
                             }}>
-                                <img src="assets/img/john.jpg" style={{
+                                <img src="assets/img/employee1.png" style={{
                                         width: '60px',
                                         height: '60px',
                                         borderRadius:'50%',
@@ -82,15 +82,16 @@ export default class RatingContainer extends React.Component {
                                 <CommentContainer>
                                     <span style={{
                                         fontSize:'1.6em',
-                                        fontWeight:'bold'
+                                        fontWeight:'bold',
+                                        color: '#FFFFFF',
                                     }}>
-                                        John Wick
+                                        P.Taer
                                     </span>
                                     <span style={{
-                                        color:'#A9A9A9',
+                                        color: '#797979',
                                         fontSize:'1.3em'
                                     }}>
-                                        เยี่ยมสัสหมาเลยค้าบ
+                                        ดีขึ้น เพราะว่าไม่ต้องมาดูตลอดเวลา
                                     </span>
                                 </CommentContainer>
                         </RowContainer>
@@ -102,7 +103,7 @@ export default class RatingContainer extends React.Component {
                                 marginRight: '32px',
                                 width:'100px'
                             }}>
-                                <img src="assets/img/joker.jpg" style={{
+                                <img src="assets/img/gittipong.png" style={{
                                         width: '60px',
                                         height: '60px',
                                         borderRadius:'50%',
@@ -120,99 +121,16 @@ export default class RatingContainer extends React.Component {
                                 <CommentContainer>
                                     <span style={{
                                         fontSize:'1.6em',
-                                        fontWeight:'bold'
+                                        fontWeight:'bold',
+                                        color: '#FFFFFF',
                                     }}>
-                                        Arthur Fleck
+                                        Gittipong Sinthorn
                                     </span>
                                     <span style={{
-                                        color:'#A9A9A9',
+                                        color:'#797979',
                                         fontSize:'1.3em'
                                     }}>
-                                        ตั้งแต่ใช้ Indezy ผมก็ไม่หดหู่อีกเลยค้าบ
-                                    </span>
-                                </CommentContainer>
-                        </RowContainer>
-                    </div>
-                    
-                    <div className="each-slide" style={{
-                        display:'flex',
-                        justifyContent:'space-between',
-                        alignContent:'center',
-                        margin:'32px'
-                    }}>
-                        <RowContainer style={{
-                            width:'50%',
-                            alignItems:'unset'
-                        }}>
-                            <ProfileContainer style={{
-                                marginRight: '32px',
-                                width:'100px'
-                            }}>
-                                <img src="assets/img/ben.jpg" style={{
-                                        width: '60px',
-                                        height: '60px',
-                                        borderRadius:'50%',
-                                        marginBottom:'12px',
-                                }}/>
-                                <StarContainer>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/half_star.png"/>
-                                </StarContainer>
-                            </ProfileContainer>
-                                <OrangeVerticalLine/>
-                                <CommentContainer>
-                                    <span style={{
-                                        fontSize:'1.6em',
-                                        fontWeight:'bold'
-                                    }}>
-                                        P.beng
-                                    </span>
-                                    <span style={{
-                                        color:'#A9A9A9',
-                                        fontSize:'1.3em'
-                                    }}>
-                                        ลูกน้องผมอู้อีกละคับ
-                                    </span>
-                                </CommentContainer>
-                        </RowContainer>
-                        <RowContainer style={{
-                            width:'50%',
-                            alignItems:'unset'
-                        }}>
-                            <ProfileContainer style={{
-                                marginRight: '32px',
-                                width:'100px'
-                            }}>
-                                <img src="assets/img/champ.jpg" style={{
-                                        width: '60px',
-                                        height: '60px',
-                                        borderRadius:'50%',
-                                        marginBottom:'12px',
-                                }}/>
-                                <StarContainer>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/star.png"/>
-                                    <Star src="assets/img/half_star.png"/>
-                                </StarContainer>
-                            </ProfileContainer>
-                                <OrangeVerticalLine/>
-                                <CommentContainer>
-                                    <span style={{
-                                        fontSize:'1.6em',
-                                        fontWeight:'bold'
-                                    }}>
-                                        P.Champ
-                                    </span>
-                                    <span style={{
-                                        color:'#A9A9A9',
-                                        fontSize:'1.3em'
-                                    }}>
-                                        ก็มาดิคับ! เหมือนหล่ออ่ะไอเวร วุ้วๆๆๆๆ
+                                        ดีจัง ทีมีระบบนี้ สนับสนุนต่อไปให้มีอนาคตครับ
                                     </span>
                                 </CommentContainer>
                         </RowContainer>
@@ -232,7 +150,7 @@ export default class RatingContainer extends React.Component {
                                 marginRight: '32px',
                                 width:'100px'
                             }}>
-                                <img src="assets/img/islam.jpg" style={{
+                                <img src="assets/img/employee1.png" style={{
                                         width: '60px',
                                         height: '60px',
                                         borderRadius:'50%',
@@ -250,15 +168,16 @@ export default class RatingContainer extends React.Component {
                                 <CommentContainer>
                                     <span style={{
                                         fontSize:'1.6em',
-                                        fontWeight:'bold'
+                                        fontWeight:'bold',
+                                        color: '#FFFFFF',
                                     }}>
-                                        Islam
+                                        P.Taer
                                     </span>
                                     <span style={{
-                                        color:'#A9A9A9',
+                                        color: '#797979',
                                         fontSize:'1.3em'
                                     }}>
-                                        ใช้ indezy แล้วผมก็ไม่กินหมูอีกเลยคับ
+                                        ดีขึ้น เพราะว่าไม่ต้องมาดูตลอดเวลา
                                     </span>
                                 </CommentContainer>
                         </RowContainer>
@@ -270,7 +189,7 @@ export default class RatingContainer extends React.Component {
                                 marginRight: '32px',
                                 width:'100px'
                             }}>
-                                <img src="assets/img/mark.jpg" style={{
+                                <img src="assets/img/gittipong.png" style={{
                                         width: '60px',
                                         height: '60px',
                                         borderRadius:'50%',
@@ -288,15 +207,16 @@ export default class RatingContainer extends React.Component {
                                 <CommentContainer>
                                     <span style={{
                                         fontSize:'1.6em',
-                                        fontWeight:'bold'
+                                        fontWeight:'bold',
+                                        color: '#FFFFFF',
                                     }}>
-                                        Mark sucker
+                                        Gittipong Sinthorn
                                     </span>
                                     <span style={{
-                                        color:'#A9A9A9',
+                                        color:'#797979',
                                         fontSize:'1.3em'
                                     }}>
-                                        เอา Facebook ผมไปทำแทนเถอะ!!!!
+                                        ดีจัง ทีมีระบบนี้ สนับสนุนต่อไปให้มีอนาคตครับ
                                     </span>
                                 </CommentContainer>
                         </RowContainer>

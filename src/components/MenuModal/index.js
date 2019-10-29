@@ -56,6 +56,7 @@ left: 0;
 height: 100%;
 width: 100%;
 background-color: #0C0D26;
+z-index: 3;
 padding: 0 10%;
 display: ${({ isVisible }) => isVisible};
 `;
