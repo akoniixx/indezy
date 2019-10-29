@@ -32,7 +32,7 @@ const firebaseConfig = {
   const roundRef = ref2.child('Round');
 
   //* view all 
-  // ref1.on('value', snapshot=>{
+  // ref.on('value', snapshot=>{
   //   console.log('ref', snapshot.val())
   // })
 
