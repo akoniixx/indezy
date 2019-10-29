@@ -12,7 +12,7 @@ const RealtimeTurbidity = (props) => {
     }
     const { value, critical_min = null, critical_max = null } = props;
     const isInCriticalZone = isCritical(value, critical_min, critical_max);
-    console.log('Realtime Turbidity', `Value is ${isInCriticalZone ? '' : 'not'} in critical zone`, critical_min, critical_max);
+    console.log('Realtime Turbidity', `Value is ${isInCriticalZone ? '' : 'not '}in critical zone`, critical_min, critical_max);
     return (
         <Prototype {...props}>
             <FaceWrapper>

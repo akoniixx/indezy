@@ -15,7 +15,7 @@ const DashboardComponent = () => (
         <AvgWL value="3.0" available />
         <RealtimePH value="7.0" available />
         <RealtimeTurbid value="500" available />
-        <RealtimeWater value="0.3" available />
+        <RealtimeWater value="30" available />
     </Dashboard>
 );
 

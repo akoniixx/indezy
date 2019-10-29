@@ -12,7 +12,7 @@ const RealtimePH = (props) => {
     const ph = +props.value || 7;
     const { value, critical_min = null, critical_max = null } = props;
     const isInCriticalZone = isCritical(value, critical_min, critical_max);
-    console.log('Realtime PH', `Value is ${isInCriticalZone ? '' : 'not'} in critical zone`, critical_min, critical_max);
+    console.log('Realtime PH', `Value is ${isInCriticalZone ? '' : 'not '}in critical zone`, critical_min, critical_max);
     return (
         <Prototype {...props}>
             <GuageWrapper>

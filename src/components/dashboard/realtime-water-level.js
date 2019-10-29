@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import { isCritical } from 'Utils';
 import { connect } from 'react-redux';
 
+//! This component value calculate in CENTIMETRES, so input value MUST be centimetre unit too.
+
 const RealtimeWaterLevel = (props) => {
     props = {
         ...props,
+        value: props.value / 100,
         unit: 'Meters',
         description: 'Realtime Water Level'
     }
@@ -15,7 +18,7 @@ const RealtimeWaterLevel = (props) => {
     const critical_min = props.critical_min || null;
     const critical_max = props.critical_max || null;
     const isInCriticalZone = !isCritical(value, critical_min, critical_max);
-    console.log('Realtime Water Level', `Value is ${isInCriticalZone ? '' : 'not'} in critical zone`, critical_min, critical_max);
+    console.log('Realtime Water Level', `Value is ${isInCriticalZone ? '' : 'not '}in critical zone`, critical_min, critical_max);
     //! Critical zone calculation end
     const height = 156;
     const levelPercent = 56;
