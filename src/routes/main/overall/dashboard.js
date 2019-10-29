@@ -7,20 +7,26 @@ import RealtimePH from 'Components/dashboard/realtime-ph';
 import RealtimeTurbid from 'Components/dashboard/realtime-turbidity';
 import RealtimeWater from 'Components/dashboard/realtime-water-level';
 
+const exceptionKeys = ['Relay state']
 
-const DashboardComponent = () => (
-    <Dashboard>
-        <AvgPH value={"5.0"} available />
-        <AvgTurbid value={'2000'} available />
-        <AvgWL value="3.0" available />
-        <RealtimePH value="7.0" available />
-        <RealtimeTurbid value="500" available />
-        <RealtimeWater value="30" available />
-    </Dashboard>
-);
+const DashboardComponent = (props) => {
+    //Todo filter unrelated keys out.
+    const filteredKeys = Object.keys(props)
+        .filter(key => !exceptionKeys.includes(key));
+    let columns = filteredKeys.length || 3;
+    return (
+        <Dashboard>
+            {filteredKeys.includes('pH') ? <AvgPH value="5" columns={columns} available /> : ''}
+            {filteredKeys.includes('Turbidity') ? <AvgTurbid value="140" columns={columns} available /> : ''}
+            {filteredKeys.includes('Distance') ? <AvgWL value="150" columns={columns} available /> : ''}
+            {filteredKeys.includes('pH') ? <RealtimePH value={props.pH} columns={columns} available /> : ''}
+            {filteredKeys.includes('Turbidity') ? <RealtimeTurbid value={props.Turbidity} columns={columns} available /> : ''}
+            {filteredKeys.includes('Distance') ? <RealtimeWater value={props.Distance} columns={columns} available /> : ''}
+        </Dashboard>
+    );
+}
 
 export default DashboardComponent;
-
 
 const Dashboard = styled.div`
 padding: 20px 6% 0;
