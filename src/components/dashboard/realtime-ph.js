@@ -7,6 +7,7 @@ import { isCritical } from 'Utils';
 const RealtimePH = (props) => {
     props = {
         ...props,
+        fraction: 1,
         description: 'Realtime pH'
     }
     const ph = +props.value || 7;

@@ -5,6 +5,7 @@ export default (props) => {
     props = {
         ...props,
         unit: 'NTUs',
+        fraction: 0,
         description: 'Today Turbidity Average'
     }
     return (

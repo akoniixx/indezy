@@ -44,12 +44,13 @@ export function getCookie(name) {
 
 /**
  * This function add comma into numbers.
- * @param {Integer} rawNumber Ex. 1000
+ * @param {Number} rawNumber Ex. 1000
+ * @param {Integer} digits Digits to display
  * @returns {String} Ex. 1,000
  */
-export function getDisplayNumber(rawNumber) {
-    let number = parseInt(rawNumber);
-    return number.toLocaleString('en-US', { minimumFractionDigits: 0 });
+export function getDisplayNumber(rawNumber, digits) {
+    let number = parseFloat(rawNumber);
+    return number.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
 
 /**
