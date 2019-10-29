@@ -1,55 +1,31 @@
-import React, { useEffect, useState, Component, Fragment } from 'react';
-import { changeLocale, toggleModal, openModal } from 'Redux/actions';
-import { connect } from 'react-redux';
+import React, { Fragment } from 'react';
 //import for styled
 import styled, { css } from 'styled-components';
-import { flexBoxColCenter, flexBoxCenter, flexBox } from 'Containers/flexbox';
-const points = [
-    {
-        id: '1',
-        handler: ''
-    },
-    {
-        id: '2',
-        handler: ''
-    },
-    {
-        id: '3',
-        handler: ''
-    },
-    {
-        id: '4',
-        handler: ''
-    },
-    {
-        id: '5',
-        handler: ''
-    }
-];
+import { flexBoxCenter, flexBox } from 'Containers/flexbox';
 
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-};
+// const settings = {
+//     dots: true,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1
+// };
 
 const Point = props => {
-    const { point, setPoint } = props;
+    const { point, setPoint, totalPoints } = props;
     return (
         <Fragment>
             <Containers>
-                {points.map(
-                    (item, i) => point == i
-                        ?
-                        <PointBoxSelected key={i} onClick={() => setPoint(i)}>
-                            <PointText>Point {item.id}</PointText>
-                        </PointBoxSelected>
-                        :
-                        <PointBox key={i} onClick={() => setPoint(i)}>
-                            <PointText>Point {item.id}</PointText>
-                        </PointBox>
+                {[...Array(totalPoints)].map(
+                    (e, i) => {
+                        const Box = point == i ? PointBoxSelected : PointBox;
+                        const pointname = `Point ${i + 1}`;
+                        return (
+                            <Box key={i} onClick={() => setPoint(i)}>
+                                <PointText>{pointname}</PointText>
+                            </Box>
+                        );
+                    }
                 )}
             </Containers>
         </Fragment>
