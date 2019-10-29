@@ -69,3 +69,7 @@ export function getFireBaseData(ref, action){
         action(snapshot.val())
     });
 }
+
+export function offFireBaseData(ref){
+    ref.off()
+}
