@@ -2,10 +2,9 @@ import React, { useEffect, useState, Component, Fragment } from 'react';
 import { changeLocale, toggleModal, openModal } from 'Redux/actions';
 import { connect } from 'react-redux';
 //import for styled
-import styled from 'styled-components';
-import {flexBoxColCenter,flexBoxCenter,flexBox} from 'Containers/flexbox';
-import Slider from "react-slick";
-const point = [
+import styled, { css } from 'styled-components';
+import { flexBoxColCenter, flexBoxCenter, flexBox } from 'Containers/flexbox';
+const points = [
     {
         id: '1',
         handler: ''
@@ -37,22 +36,31 @@ const settings = {
 };
 
 const Point = props => {
+    const { point, setPoint } = props;
     return (
         <Fragment>
             <Containers>
-                    {point.map(
-                        (item, i) => (
-                            <PointBox key={i} onclick={item.handler}>
-                                <PointText>Point {item.id}</PointText>
-                            </PointBox>
-                        )
-                    )}
+                {points.map(
+                    (item, i) => point == i
+                        ?
+                        <PointBoxSelected key={i} onClick={() => setPoint(i)}>
+                            <PointText>Point {item.id}</PointText>
+                        </PointBoxSelected>
+                        :
+                        <PointBox key={i} onClick={() => setPoint(i)}>
+                            <PointText>Point {item.id}</PointText>
+                        </PointBox>
+                )}
             </Containers>
         </Fragment>
     );
 }
 
 export default Point;
+
+const selected = css`
+background: transparent linear-gradient(242deg, #2B90C4 0%, #2C68A1 100%) 0% 0% no-repeat padding-box;
+`;
 
 const Containers = styled(flexBox)`
 justify-content: center;
@@ -70,12 +78,16 @@ height: 72px;
 cursor: pointer;
 border-radius: 15px;
 margin: 10px 0;
-background-color: #0D0E1F;
+background-color: #1C1E3E;
  :hover{
-    background-color: #2C6EA4;
-    /* background-image: linear-gradient(to #2C6EA4 , #2C6EA4 , #2B8EC2); */
+    ${selected}
 }
 `;
+
+const PointBoxSelected = styled(PointBox)`
+${selected}
+`;
+
 const PointText = styled.span`
 font-size: 1.2em;
 color: #FFFFFF;
