@@ -155,7 +155,7 @@ border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 display: flex;
 flex-direction: column;
-z-index:2;
+z-index:1;
 font: 0.75rem/0.9375rem Helvetica Neue Medium;
 & > *:first-child{
     border-top-left-radius: 10px;

@@ -9,3 +9,7 @@
 .ant-Button li{
     color: #F47529;
 }
+
+.react-slideshow-container .nav {
+    z-index: 1;
+}
