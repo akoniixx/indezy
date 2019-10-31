@@ -59,6 +59,7 @@ margin-right: ${margin.small};
 height: 25px;
 width: 25px;
 position: relative;
+font-size: 2rem;
 `;
 
 export const EmailInput = styled.input`
@@ -66,6 +67,7 @@ export const EmailInput = styled.input`
     color: #FFFFFF;
     font-family: 1.125rem/4.75rem Helvetica Neue Medium !important;
 }
+border-radius: 10px;
 background-color: #40418c;
 border: none;
 padding: 8px;

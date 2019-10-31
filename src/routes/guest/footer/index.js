@@ -39,14 +39,14 @@ class Footer extends Component {
                     <ContactFooter>
                         <FooterHeaderText>Have a Question?</FooterHeaderText>
                         <div style={{ display: "flex" }}>
-                            <FooterIcon src='assets/img/gpsIcon.png' style={{ top: "5px" }} />
+                            <FooterIcon src='assets/img/location-pin.svg' style={{ top: "5px" }} />
                             <span>{strings.address}</span>
                         </div>
                         <div style={{ display: "flex", margin: "1rem 0" }}>
-                            <FooterIcon src='assets/img/phoneIcon.png' />
+                            <FooterIcon src='assets/img/phone-footer.svg' />
                             <span style={{ alignSelf: "center" }}>{strings.tel}</span>
                         </div><div style={{ display: "flex" }}>
-                            <FooterIcon src='assets/img/mailIcon.png' />
+                            <FooterIcon src='assets/img/envelope.svg' />
                             <span>Indezy@gmail.com</span>
                         </div>
                     </ContactFooter>
@@ -57,7 +57,7 @@ class Footer extends Component {
                             onChange={this.handleChange}
                         />
 
-                        <button style={{ backgroundColor: "#F47529", border: "none", padding: "8px" }} onClick={this.sendEmailSubcribe}>
+                        <button style={{ backgroundColor: "#F47529", border: "none", padding: "8px", borderRadius: 10 }} onClick={this.sendEmailSubcribe}>
                             <span style={{
                                 fontFamily: '1.125rem/4.75rem Helvetica Neue Medium'
                             }}>Submit</span>
