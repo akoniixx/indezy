@@ -37,14 +37,14 @@ const rootCSS = css`
     font-display: fallback;
 }
 @font-face {
-    font-family: "Helveltica";
+    font-family: "Helvetica";
     src: url("/assets/fonts/Helvetica.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: fallback;
 }
 @font-face {
-    font-family: "Helveltica Neue";
+    font-family: "Helvetica Neue";
     src: url("/assets/fonts/HelveticaNeue.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
