@@ -51,6 +51,20 @@ const rootCSS = css`
     font-display: fallback;
 }
 @font-face {
+    font-family: "Helvetica Neue Medium";
+    src: url("/assets/fonts/HelveticaNeue Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Helvetica Neue Bold";
+    src: url("/assets/fonts/HelveticaNeue Bold.ttf") format("truetype");
+    font-style: bold;
+    font-weight: 700;
+    font-display: fallback;
+}
+@font-face {
     font-family: "Helvetica Neue Condensed Black";
     src: url("/assets/fonts/HelveticaNeue BlackCond.ttf") format("truetype");
     font-style: normal;
