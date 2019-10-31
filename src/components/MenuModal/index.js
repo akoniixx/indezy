@@ -66,13 +66,13 @@ const MenuContainer = styled(flexBoxCol)`
 
 const MenuText = styled.span`
 color: #FFFFFF;
-font-size: 1.8em;
+font: 1.5625rem/4.75rem Helvetica;
 cursor: pointer;
 `;
 
 const MenuHeaderText = styled.span`
 color: #FFFFFF;
-font-size: 3em;
+font: bold 1.5625rem/4.75rem Helvetica;
 cursor: pointer;
 `;
 
@@ -92,7 +92,7 @@ cursor: pointer;
 
 const MenuBox = styled(flexBoxCol)`
 width: 500px;
-& > :not(:first-child){
+& > :nth-child(n+2):nth-child(-n+3){
     margin-top: 4%;
 }
 
