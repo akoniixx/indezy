@@ -65,6 +65,7 @@ align-items: center;
 }
 margin-left: 10px;
 margin-right: 72px;
+font: 0.75rem Helvetica Neue Light;
 `;
 
 const LeftMenu = styled.div`
@@ -81,8 +82,9 @@ width: 250px;
 background: black;
 border-radius: 10px;
 padding: 0 20px;
+font: 0.75rem Helvetica Neue Light;
 ::placeholder {
-    color: #727272;
+    color: #FFFFFF72;
 }
 `;
 
