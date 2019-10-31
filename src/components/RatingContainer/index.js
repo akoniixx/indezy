@@ -81,15 +81,15 @@ export default class RatingContainer extends React.Component {
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
                                     <span style={{
-                                        fontSize:'1.6em',
-                                        fontWeight:'bold',
-                                        color: '#FFFFFF',
+                                        font: '1.375rem/1.25rem Helvetica Neue Bold',
+                                        color: '#FFFFFF'
                                     }}>
                                         P.Taer
                                     </span>
                                     <span style={{
-                                        color: '#797979',
-                                        fontSize:'1.3em'
+                                        paddingTop: 10,
+                                        color: '#A8A8A8',
+                                        font: '100 1.125rem/1.25rem Kanit'
                                     }}>
                                         ดีขึ้น เพราะว่าไม่ต้องมาดูตลอดเวลา
                                     </span>
@@ -120,15 +120,15 @@ export default class RatingContainer extends React.Component {
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
                                     <span style={{
-                                        fontSize:'1.6em',
-                                        fontWeight:'bold',
-                                        color: '#FFFFFF',
+                                        font: '1.375rem/1.25rem Helvetica Neue Bold',
+                                        color: '#FFFFFF'
                                     }}>
                                         Gittipong Sinthorn
                                     </span>
                                     <span style={{
-                                        color:'#797979',
-                                        fontSize:'1.3em'
+                                        paddingTop: 10,
+                                        color: '#A8A8A8',
+                                        font: '100 1.125rem/1.25rem Kanit'
                                     }}>
                                         ดีจัง ทีมีระบบนี้ สนับสนุนต่อไปให้มีอนาคตครับ
                                     </span>
@@ -167,15 +167,15 @@ export default class RatingContainer extends React.Component {
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
                                     <span style={{
-                                        fontSize:'1.6em',
-                                        fontWeight:'bold',
-                                        color: '#FFFFFF',
+                                        font: '1.375rem/1.25rem Helvetica Neue Bold',
+                                        color: '#FFFFFF'
                                     }}>
                                         P.Taer
                                     </span>
                                     <span style={{
-                                        color: '#797979',
-                                        fontSize:'1.3em'
+                                        paddingTop: 10,
+                                        color: '#A8A8A8',
+                                        font: '100 1.125rem/1.25rem Kanit'
                                     }}>
                                         ดีขึ้น เพราะว่าไม่ต้องมาดูตลอดเวลา
                                     </span>
@@ -206,15 +206,15 @@ export default class RatingContainer extends React.Component {
                                 <OrangeVerticalLine/>
                                 <CommentContainer>
                                     <span style={{
-                                        fontSize:'1.6em',
-                                        fontWeight:'bold',
-                                        color: '#FFFFFF',
+                                        font: '1.375rem/1.25rem Helvetica Neue Bold',
+                                        color: '#FFFFFF'
                                     }}>
                                         Gittipong Sinthorn
                                     </span>
                                     <span style={{
-                                        color:'#797979',
-                                        fontSize:'1.3em'
+                                        paddingTop: 10,
+                                        color: '#A8A8A8',
+                                        font: '100 1.125rem/1.25rem Kanit'
                                     }}>
                                         ดีจัง ทีมีระบบนี้ สนับสนุนต่อไปให้มีอนาคตครับ
                                     </span>

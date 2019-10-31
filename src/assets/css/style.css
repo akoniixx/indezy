@@ -9,3 +9,28 @@
 .ant-Button li{
     color: #F47529;
 }
+
+.react-slideshow-container .nav {
+    z-index: 1;
+}
+
+.login-modal input {
+    background: #C7C7C7D3 0% 0% no-repeat padding-box;
+    font: 1rem/4.0625rem Helvetica Neue Medium;
+}
+
+.login-modal input:placeholder { 
+    color: #0D0D0D;
+}
+
+.login-modal input:focus {
+    background: #C7C7C7D3 0% 0% no-repeat padding-box;
+}
+
+.login-modal button {
+    background: #F47529 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 10px #F4752960;
+    border-radius: 10px;
+    width: 70%;
+    font: 100 1rem/2rem Helvetica Neue Medium;
+}

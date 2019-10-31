@@ -30,22 +30,43 @@ width: fill-available;
 
 const rootCSS = css`
 @font-face {
-    font-family: "sukhumvit";
-    src: url("/assets/fonts/sukhumvit.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-    font-display: fallback;
-}
-@font-face {
-    font-family: "Helveltica";
+    font-family: "Helvetica";
     src: url("/assets/fonts/Helvetica.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: fallback;
 }
 @font-face {
-    font-family: "Helveltica Neue";
+    font-family: "Helvetica Neue";
     src: url("/assets/fonts/HelveticaNeue.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Helvetica Neue Light";
+    src: url("/assets/fonts/HelveticaNeue Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Helvetica Neue Medium";
+    src: url("/assets/fonts/HelveticaNeue Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Helvetica Neue Bold";
+    src: url("/assets/fonts/HelveticaNeue Bold.ttf") format("truetype");
+    font-style: bold;
+    font-weight: 700;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "Helvetica Neue Condensed Black";
+    src: url("/assets/fonts/HelveticaNeue BlackCond.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: fallback;
@@ -74,7 +95,7 @@ html {
 }
 
 body {
-    font-family: Helvetica Neue !important;
+    font-family: Helvetica Neue;
     margin: 0;
     display: flex;
     flex-direction: column;

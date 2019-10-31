@@ -1,4 +1,4 @@
-import React, { Fragment , useEffect} from 'react';
+import React, { Fragment, useEffect } from 'react';
 import styled from 'styled-components';
 import { flexBoxColCenter, flexBoxCenter, flexBox, flexBoxCol } from 'Containers/flexbox';
 import { toggleModal, openModal, login, closeModal, setName, setRealTimePoint } from 'Redux/actions';
@@ -12,7 +12,6 @@ const HoverSideBar = props => {
     const { isOpen, toggleModal, openModal, closeModal, firebaseData } = props;
     const { factoryName, setRealTimePoint } = props; //* firebase action 
     console.log('firebaseData', firebaseData)
-    console.log(isOpen, "fuck");
     //* get firebade data
     useEffect(() => {
         getFireBaseData(firebaseRef.nameRef, factoryName)//* set factory name 
@@ -35,7 +34,6 @@ const HoverSideBar = props => {
     }
     //* close modal methods
     const handlerClickEvent = (e) => {
-        console.log("kuy", e.target.className);
         if (e.target.className != 'exception') {
             closeModal('emailPopup');
             closeModal('contactPopup');
@@ -55,7 +53,7 @@ const HoverSideBar = props => {
             text2: 'Us',
             popupName: 'emailPopup',
             handler: (e) => handler('emailPopup', e),
-            popupImg:'assets/img/mail-black.svg',
+            popupImg: 'assets/img/mail-black.svg',
             boxSize: '300px'
         },
         {
@@ -64,7 +62,7 @@ const HoverSideBar = props => {
             text2: 'us',
             popupName: 'contactPopup',
             handler: (e) => handler('contactPopup', e),
-            popupImg:'assets/img/phone-black.svg'
+            popupImg: 'assets/img/phone-black.svg'
         }
     ]
 
@@ -75,31 +73,31 @@ const HoverSideBar = props => {
         {
             headerText: 'Email Alert',
             body: <Fragment>
-                    <InputBox>
-                        <InfoBold style={{marginLeft: '10px'}}>Email</InfoBold>
-                        <EmailInput type="email" placeholder="Enter your Email." />
-                    </InputBox>
-                    <InputBox>
-                        <InfoBold style={{marginLeft: '10px'}}>Phone</InfoBold>
-                        <EmailInput type="tel" placeholder="Enter your Phone Number." />
-                    </InputBox>
-                    <SubmitButton onclick="">
-                        <ItemText>Submit</ItemText>
-                    </SubmitButton>
-                </Fragment>
+                <InputBox>
+                    <InfoBold style={{ marginLeft: '10px' }}>Email</InfoBold>
+                    <EmailInput type="email" placeholder="Enter your Email." />
+                </InputBox>
+                <InputBox>
+                    <InfoBold style={{ marginLeft: '10px' }}>Phone</InfoBold>
+                    <EmailInput type="tel" placeholder="Enter your Phone Number." />
+                </InputBox>
+                <SubmitButton onclick="">
+                    <ItemText>Submit</ItemText>
+                </SubmitButton>
+            </Fragment>
         },
         {
             headerText: 'Contact us',
             body: <Fragment>
-                <ContactBox>
-                    <ContactIcon src={itemText[1].popupImg}/>
+                <ContactBox style={{ marginBottom: 10 }}>
+                    <ContactIcon src={itemText[1].popupImg} />
                     <ContactInfo>
                         <InfoBold>Email</InfoBold>
                         <InfoText>Indezy@gmail.com</InfoText>
                     </ContactInfo>
                 </ContactBox>
                 <ContactBox>
-                    <ContactIcon src={itemText[2].popupImg}/>
+                    <ContactIcon src={itemText[2].popupImg} />
                     <ContactInfo>
                         <InfoBold>Phone</InfoBold>
                         <InfoText>+66 931787157</InfoText>
@@ -112,9 +110,8 @@ const HoverSideBar = props => {
         <HoverContainer>
             {itemText.map(
                 (item, i) => {
-                    console.log('fuck', isOpen[item.popupName], item.popupName)
                     return (
-                        <Item key={i} bg={item.bg} onClick={(e)=>item.handler(e)} className="exception">
+                        <Item key={i} bg={item.bg} onClick={(e) => item.handler(e)} className="exception">
                             {/* //* no popup at first component */}
                             {i == 0 ? '' :
                                 <Popup isOpen={isOpen[item.popupName]} boxSize={item.boxSize}>
@@ -138,12 +135,13 @@ const HoverSideBar = props => {
 }
 
 const mapStateToProps = ({ modals, firebase }) => (
-    { isOpen: modals,
-      firebaseData: firebase
+    {
+        isOpen: modals,
+        firebaseData: firebase
     }
 );
 
-export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal, factoryName:setName, setRealTimePoint })(HoverSideBar);
+export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal, factoryName: setName, setRealTimePoint })(HoverSideBar);
 
 const HoverContainer = styled.div`
 position: fixed;
@@ -157,7 +155,8 @@ border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 display: flex;
 flex-direction: column;
-z-index:2;
+z-index:1;
+font: 0.75rem/0.9375rem Helvetica Neue Medium;
 & > *:first-child{
     border-top-left-radius: 10px;
 }
@@ -186,7 +185,6 @@ margin-bottom: 8px;
 
 const ItemText = styled.span`
 color: #FFFFFF;
-font-size: 0.8em;
 `;
 
 const Popup = styled(flexBoxCol)`
@@ -220,7 +218,6 @@ height: 40px;
 width: 90%;
 text-indent: 10px;
 ::placeholder {
-  font-size: 0.9em;
   text-indent: 10px;
 }
 `;
@@ -255,7 +252,8 @@ const ContactInfo = styled(flexBoxCol)`
 `;
 
 const InfoBold = styled.span`
-font-weight: bold;
+font: 700 15px/20px Helvetica Neue medium;
+margin-bottom: 5px;
 `;
 
 const InfoText = styled.span`

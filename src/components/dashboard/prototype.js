@@ -9,7 +9,7 @@ export default ({ columns = 3, available, value, unit, description, children, fr
             <Status available={available} />
             <ContentWrapper>
                 <UnitRow>
-                    <Value>{getDisplayNumber(value, fraction)}</Value>
+                    <span>{getDisplayNumber(value, fraction)}</span>
                     {unit ? <Unit>{unit}</Unit> : ''}
                 </UnitRow>
                 <Description>{description}</Description>
@@ -76,14 +76,10 @@ min-height: 210px;
 
 const UnitRow = styled.div`
 width: 100%;
-font-weight: bold;
 display: flex;
 justify-content: center;
 align-items: baseline;
-`;
-
-const Value = styled.span`
-font-size: 2.5rem;
+font: 2.5rem/4.75rem Helvetica Neue Bold;
 `;
 
 const Unit = styled.span`
@@ -94,6 +90,5 @@ margin-left: 10px;
 const Description = styled.span`
 display: flex;
 justify-content: center;
-font-size: 1rem;
-font-weight: 100;
+font: 1rem Helvetica Neue;
 `;

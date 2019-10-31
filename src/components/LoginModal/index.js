@@ -61,18 +61,23 @@ class LoginModal extends Component {
   };
   render() {
     const { isOpen, toggleModal, openModal, auth, login } = this.props;
-    
+    const inputStyle = {
+      width: 250
+    }
     return (
       <Fragment>
         <Modal isOpen={isOpen} toggle={() => toggleModal('loginModal')} backdrop={true} className='loginModal'>
           <div className="d-flex justify-content-center" style={{
             backgroundColor: "black",
-            backgroundImage: "url(" + bg + ")" 
+            backgroundImage: "url(" + bg + ")"
           }}>
 
-            <ModalBody >
-              <NavItem>
-                <NavLink onClick={() => {this.setState({_isOpen: false})}}  style={{ color: '#F47529' }} >- Back To Home</NavLink>
+            <ModalBody className="login-modal">
+              <NavItem style={{ height: 'fit-content' }}>
+                <NavLink onClick={() => { this.setState({ _isOpen: false }) }} style={{
+                  color: '#F47529',
+                  font: '1.375rem Helvetica Neue Medium'
+                }} >- Back To Home</NavLink>
               </NavItem>
 
               <div className="d-flex  justify-content-center">
@@ -93,7 +98,7 @@ class LoginModal extends Component {
                           className="form-control"
                           placeholder="example@indezy.com"
                           value={this.state.email}
-                          style={{ width: 250 }}
+                          style={inputStyle}
                           onChange={this.handleChange}>
 
                         </Input>
@@ -112,11 +117,11 @@ class LoginModal extends Component {
                           className="form-control"
                           placeholder="Password"
                           value={this.state.password}
-                          style={{ width: 250 }}
+                          style={inputStyle}
                           onChange={this.handleChange}
                         >
                         </Input>
-                        <div style={{ fontSize: 12, color: "red" }}>
+                        <div style={{ color: "red", font: '100 0.75rem/1.5rem Helvetica Neue' }}>
                           {/* {this.state.passwordError} */}
                           {auth.message}
                         </div>
@@ -125,13 +130,7 @@ class LoginModal extends Component {
                     </Row>
 
                     <br></br><div className="d-flex  justify-content-center">
-                    <Row>
-                    
-                      <Col>
-                        <Button type="submit" color="#F47529" size="md" style={{backgroundColor: "#F47529", color: "#fff"}} active>LOG IN</Button>
-                      </Col>
-                      
-                    </Row>
+                      <Button type="submit" color="#F47529" size="md" style={{ backgroundColor: "#F47529", color: "#fff" }} active>LOG IN</Button>
                     </div>
 
                   </div>

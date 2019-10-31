@@ -16,10 +16,9 @@ export default (props) => (
 );
 
 const DivStyle = styled.div`
-padding: 0 100px;
+padding: 0 16%;
 display: flex;
 justify-content: space-between;
-margin: 0 6.25rem;
 height: 100px;
 align-items: center;
 `;
@@ -30,9 +29,11 @@ text-align: left;
 letter-spacing: 0;
 color: #FFFFFF; 
 font-weight: bold; /*ความหนา*/
+font: 1.25rem Helvetica Neue Medium;
 `;
 
 const SiteName = styled.span`
+font: 1rem Helvetica Neue Light;
 letter-spacing: 0;
 color: #FFFFFF;
 `;
@@ -40,13 +41,15 @@ color: #FFFFFF;
 const LeftGroup = styled.div`
 flex-direction: column;
 display: flex;
+justify-content: space-around;
+height: 60%;
 & > *:first-child {
     margin-bottom: 5px;
 }
 `;
 
 const Button = styled.div`
-    padding: 0 20px;
+padding: 0 20px;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -57,8 +60,10 @@ cursor: pointer;
 background: transparent linear-gradient(68deg, #F47529 0%, #FCB116 100%) 0% 0% no-repeat padding-box;
 box-shadow: 0px 0px 6px #0000000D;
 border-radius: 10px;
+font: 1rem Helvetica Neue Light;
 `;
 
 const Caret = styled.span`
 transform:rotate(270deg);
+font: 2rem Helvetica Neue;
 `;

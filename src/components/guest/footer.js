@@ -19,7 +19,7 @@ background-repeat: no-repeat;
 background-position: right;
 background-color: #1D1E62;
 position: relative;
-padding: ${margin.big};
+padding: 5rem 12%;
 `;
 
 export const ContactFooter = styled.div`
@@ -28,7 +28,7 @@ flex-direction: column;
 align-self: flex-start;
 width: 300px;
 color: ${footerValue.footerText.color};
-flex-basis: 50%;
+font: 1.125rem/1.875rem Helvetica Neue Medium;
 `;
 
 export const Copyright = styled.div`
@@ -37,31 +37,37 @@ bottom: 0;
 flex-basis: 70%;
 color: ${footerValue.footerText.color};
 margin-bottom: ${margin.xsmall};
+font: 0.75rem/2rem Helvetica Neue Medium;
 `;
 
 export const FooterColContainer = styled(flexBoxColCenter)`
 `;
 
 export const FooterContainer = styled(flexBoxCenter)`
-flex-wrap: wrap;
+width: 100%;
+justify-content: flex-start;
 `;
 
 export const FooterHeaderText = styled.span`
 font-size: 1.5em;
 margin-bottom: ${margin.small};
+font: 1.25rem/4.75rem Helvetica Neue Bold;
 `;
 
 export const FooterIcon = styled.img`
 margin-right: ${margin.small};
 height: 25px;
-weight: 25px;
+width: 25px;
 position: relative;
+font-size: 2rem;
 `;
 
 export const EmailInput = styled.input`
 ::placeholder {
     color: #FFFFFF;
+    font-family: 1.125rem/4.75rem Helvetica Neue Medium !important;
 }
+border-radius: 10px;
 background-color: #40418c;
 border: none;
 padding: 8px;

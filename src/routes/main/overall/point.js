@@ -18,7 +18,7 @@ const Point = props => {
             <Containers>
                 {[...Array(totalPoints)].map(
                     (e, i) => {
-                        const Box = point == i ? PointBoxSelected : PointBox;
+                        const Box = point === i ? PointBoxSelected : PointBox;
                         const pointname = `Point ${i + 1}`;
                         return (
                             <Box key={i} onClick={() => setPoint(i)}>
@@ -65,6 +65,6 @@ ${selected}
 `;
 
 const PointText = styled.span`
-font-size: 1.2em;
+font: 1.25rem Helvetica Neue Medium;
 color: #FFFFFF;
 `;
