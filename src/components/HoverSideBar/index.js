@@ -12,7 +12,7 @@ const HoverSideBar = props => {
     const { isOpen, toggleModal, openModal, closeModal, firebaseData } = props;
     const { factoryName, setRealTimePoint } = props; //* firebase action 
     console.log('firebaseData', firebaseData)
-    //* get firebade data
+    //* get firebase data
     useEffect(() => {
         getFireBaseData(firebaseRef.nameRef, factoryName)//* set factory name 
         getFireBaseData(firebaseRef.pointRef, setRealTimePoint)//* set all point 
@@ -144,7 +144,7 @@ const mapStateToProps = ({ modals, firebase }) => (
 export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal, factoryName: setName, setRealTimePoint })(HoverSideBar);
 
 const HoverContainer = styled.div`
-position: fixed;
+position: absolute;
 right: 0;
 top: 270px;
 transition: 0.3s;

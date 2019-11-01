@@ -86,6 +86,12 @@ const rootCSS = css`
     font-display: fallback;
 }
 
+html,body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    width: 100%;
+}
 html {
     font-size: 16px;
 }
