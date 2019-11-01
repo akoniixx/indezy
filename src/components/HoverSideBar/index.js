@@ -12,7 +12,7 @@ const HoverSideBar = props => {
     const { isOpen, toggleModal, openModal, closeModal, firebaseData } = props;
     const { factoryName, setRealTimePoint } = props; //* firebase action 
     console.log('firebaseData', firebaseData)
-    //* reget fibade data
+    //* get firebase data
     useEffect(() => {
         getFireBaseData(firebaseRef.nameRef, factoryName)//* set factory name 
         getFireBaseData(firebaseRef.pointRef, setRealTimePoint)//* set all point 
