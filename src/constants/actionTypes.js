@@ -15,3 +15,7 @@ export const CLOSE_ALL_MODALS = "CLOSE_ALL_MODALS"
 /* AUTH */
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
+export const SAVE_TOKEN = "SAVE_TOKEN";
+export const CHECK_TOKEN = "CHECK_TOKEN";
+export const DELETE_TOKEN = "DELETE_TOKEN";
+export const SET_LOGIN_MESSAGE = "SET_LOGIN_MESSAGE";
