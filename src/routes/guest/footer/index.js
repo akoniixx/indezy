@@ -32,7 +32,7 @@ class Footer extends Component {
     render() {
         const { locale } = this.props;
         const strings = lang(locale).footer;
-        console.log(this.state.email);
+        // console.log(this.state.email);
         return (
             <StyledFooter className="footer">
                 <FooterContainer>

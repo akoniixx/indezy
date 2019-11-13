@@ -26,7 +26,7 @@ class MainApp extends Component {
             this[ref],
             {}
         );
-        console.log("scrolling", ref);
+        // console.log("scrolling", ref);
     }
 
     componentDidMount() {

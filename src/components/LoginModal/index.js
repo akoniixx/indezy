@@ -53,7 +53,7 @@ class LoginModal extends Component {
     event.preventDefault();
     const isValid = this.validate();
     if (isValid) {
-      console.log(this.state);
+      // console.log(this.state);
       // clear form
       this.setState(initialState);
     }

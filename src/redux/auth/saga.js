@@ -1,6 +1,7 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
-import * as apis from 'Constants/apis';
+import * as apis from 'Constants/apis_auth';
 import { fetchPostRequest, fetchAuthorizedPostRequest } from 'Utils';
+import { email as isEmail } from 'Utils/stringvalidators';
 import { LOGIN, CHECK_TOKEN } from 'Constants/actionTypes';
 import { saveToken, setMessage, setIsTokenVerified } from './actions';
 import { INVALID_USERNAME_OR_PASSWORD } from 'Constants/messages';
@@ -40,7 +41,7 @@ function* handleCheckToken({ payload }) {
     try {
         const res = yield call(checkTokenAsync, payload);
         //TODO If server responses email means token is valid.
-        if(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(res)) yield put(setIsTokenVerified(res))
+        if (isEmail(res)) yield put(setIsTokenVerified(res));
         else yield put(setIsTokenVerified(false));
     } catch (err) {
         console.error('handleCheckToken', err);
