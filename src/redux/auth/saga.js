@@ -1,5 +1,5 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
-import * as apis from 'Constants/apis';
+import * as apis from 'Constants/apis_auth';
 import { fetchPostRequest, fetchAuthorizedPostRequest } from 'Utils';
 import { LOGIN, CHECK_TOKEN } from 'Constants/actionTypes';
 import { saveToken, setMessage, setIsTokenVerified } from './actions';

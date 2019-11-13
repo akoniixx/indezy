@@ -3,7 +3,7 @@
  * Please split hostname prefix and api routes.
  */
 
-export const HOSTNAME = 'http://localhost:5000';
+export const HOSTNAME = 'http://auth.indezy.co';
 
 export const SIGNIN = '/users/signin';
 export const SIGNOUT = '/users/signout';
