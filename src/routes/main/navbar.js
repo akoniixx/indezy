@@ -28,7 +28,7 @@ const Navigationbar = ({ history, user, logout }) => (
     </Nav>
 );
 
-const mapStateToProps = ({ auth }) => ({ user: auth.user.email });
+const mapStateToProps = ({ auth }) => ({ user: auth.email });
 
 export default connect(mapStateToProps, { logout })(Navigationbar);
 

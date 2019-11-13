@@ -8,19 +8,16 @@ import 'antd/dist/antd.css';
 import 'Assets/css/style.css';
 import 'Assets/css/bootstrap.min.css';
 
-class App extends Component {
-    render() {
-        return (
-            <Provider store={store()}>
-                <Router>
-                    <Switch>
-                        <Route path="/" component={MainApp} />
-                    </Switch>
-                </Router>
-            </Provider>
-        );
-    }
-}
+const App = () => (
+    <Provider store={store()}>
+        <Router>
+            <Switch>
+                <Route path="/" component={MainApp} />
+            </Switch>
+        </Router>
+    </Provider>
+);
+
 
 ReactDOM.render(
     <App />,

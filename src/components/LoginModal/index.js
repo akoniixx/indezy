@@ -121,7 +121,7 @@ class LoginModal extends Component {
                           onChange={this.handleChange}
                         >
                         </Input>
-                        <div style={{ color: "red", font: '100 0.75rem/1.5rem Helvetica Neue' }}>
+                        <div style={{ color: "red", font: '500 0.75rem/1.5rem "Helvetica Neue Medium' }}>
                           {/* {this.state.passwordError} */}
                           {auth.message}
                         </div>

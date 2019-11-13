@@ -3,7 +3,9 @@
  * Please split hostname prefix and api routes.
  */
 
-export const hostnamePrefix = 'localhost/api';
+export const HOSTNAME = 'http://localhost:5000';
 
-export const loginCP = '/cp/login';
-export const logoutCP = '/cp/logout';
+export const SIGNIN = '/users/signin';
+export const SIGNOUT = '/users/signout';
+export const VALIDATE_TOKEN = '/users/validateToken';
+export const EMAIL = '/users/email';
