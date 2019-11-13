@@ -1,17 +1,24 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { flexBoxColCenter, flexBoxCenter, flexBox, flexBoxCol } from 'Containers/flexbox';
 import { toggleModal, openModal, login, closeModal, setName, setRealTimePoint } from 'Redux/actions';
 import { connect } from 'react-redux';
 
 import * as firebaseRef from 'Constants/firebase';
-import { getFireBaseData } from 'Utils'
+import { getFireBaseData } from 'Utils';
+import * as Validators from 'Utils/stringvalidators';
+import { INVALID_EMAIL, INVALID_TEL, FORM_EMPTY } from 'Constants/messages';
 
 
 const HoverSideBar = props => {
     const { isOpen, toggleModal, openModal, closeModal, firebaseData } = props;
     const { factoryName, setRealTimePoint } = props; //* firebase action 
-    console.log('firebaseData', firebaseData)
+    // console.log('firebaseData', firebaseData)
+    //* Subscriber Email and Tel states and onChanges
+    const [subEmail, setSubEmail] = useState('');
+    const [subTel, setSubTel] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [telError, setTelError] = useState('');
     //* get firebase data
     useEffect(() => {
         getFireBaseData(firebaseRef.nameRef, factoryName)//* set factory name 
@@ -37,7 +44,22 @@ const HoverSideBar = props => {
         if (e.target.className != 'exception') {
             closeModal('emailPopup');
             closeModal('contactPopup');
+            setSubEmail('');
+            setSubTel('');
+            setEmailError('');
+            setTelError('');
             window.removeEventListener('click', handlerClickEvent)
+        }
+    }
+    const onSubmitSubscriber = () => {
+        const isEmailOk = Validators.email(subEmail);
+        const isTelOk = Validators.tel(subTel);
+        if (isTelOk && isEmailOk) console.log('call post both');
+        else if (isTelOk) console.log('call post tel');
+        else if (isEmailOk) console.log('call post email');
+        else {
+            subEmail.length > 0 ? setEmailError(INVALID_EMAIL) : setEmailError(FORM_EMPTY);
+            subTel.length > 0 ? setTelError(INVALID_TEL) : setTelError(FORM_EMPTY);
         }
     }
     const itemText = [
@@ -75,13 +97,19 @@ const HoverSideBar = props => {
             body: <Fragment>
                 <InputBox>
                     <InfoBold style={{ marginLeft: '10px' }}>Email</InfoBold>
-                    <EmailInput type="email" placeholder="Enter your Email." />
+                    <EmailInput
+                        placeholder="Enter your Email."
+                        value={subEmail} onChange={(e) => setSubEmail(e.target.value)} />
+                    <ErrorInput>{emailError}</ErrorInput>
                 </InputBox>
                 <InputBox>
                     <InfoBold style={{ marginLeft: '10px' }}>Phone</InfoBold>
-                    <EmailInput type="tel" placeholder="Enter your Phone Number." />
+                    <EmailInput
+                        placeholder="Enter your Phone Number."
+                        value={subTel} onChange={(e) => setSubTel(e.target.value)} />
+                    <ErrorInput>{telError}</ErrorInput>
                 </InputBox>
-                <SubmitButton onclick="">
+                <SubmitButton onClick={onSubmitSubscriber}>
                     <ItemText>Submit</ItemText>
                 </SubmitButton>
             </Fragment>
@@ -195,9 +223,10 @@ top: 0;
 background-color: #F0F0F0;
 z-index: 2;
 width: 300px;
-height: ${({ boxSize }) => boxSize ? boxSize : '170px'};
 border-radius: 10px 0 0 10px;
 transition: 0.8s;
+height: fit-content;
+display: flex;
 `;
 
 const PopupHeader = styled(flexBoxCenter)`
@@ -209,23 +238,34 @@ height: 50px;
 
 const PopupBody = styled(flexBoxColCenter)`
 width: 100%;
-height: 80%;
+height: fit-content;
+padding: 20px;
+display: flex;
+justify-content: center;
 `;
 
 const EmailInput = styled.input`
 border-radius: 10px;
 height: 40px;
-width: 90%;
+width: 100%;
 text-indent: 10px;
 ::placeholder {
   text-indent: 10px;
 }
 `;
 
+const ErrorInput = styled.span`
+margin-top: 7px;
+font: 0.75rem Helvetica Neue Medium;
+color: red;
+`;
+
 const InputBox = styled(flexBoxCol)`
 padding: 0 8px 0 8px;
 margin-bottom: 5%;
 width: 90%;
+display: flex;
+justify-content: center;
 `;
 
 const SubmitButton = styled.button`
