@@ -100,6 +100,17 @@ export const isCritical = (value, critical_min = null, critical_max = null) => {
     return false;
 }
 
+export const fetchPostRequest = async (api, payload) => {
+    return fetch(api, {
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+}
+
 /**
  * This function get value from firebase and set value by redux action.
  * @param {ref} ref description field of db needs to access Ex. nameRef from firbase.js
