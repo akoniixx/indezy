@@ -6,8 +6,11 @@ import Guest from './guest';
 import Main from './main';
 
 const App = (props) => {
-    const { match, closeModal, email, token, isLoggedIn } = props;
+    const { match, closeModal, email, token, isLoggedIn, checkToken } = props;
     console.log('email, token, isLoggedIn', email, token, isLoggedIn);
+    useEffect(() => {
+        checkToken(token);
+    }, [token, checkToken]);
     if(isLoggedIn) closeModal('loginModal');
     return (
         <Fragment>
@@ -25,4 +28,4 @@ const mapStateToProps = ({ auth }) => ({
     isLoggedIn: auth.isTokenVerified
 });
 
-export default connect(mapStateToProps, { closeModal })(App);
+export default connect(mapStateToProps, { closeModal, checkToken })(App);

@@ -1,4 +1,7 @@
-import { SAVE_TOKEN, LOGIN, LOGOUT, SET_LOGIN_MESSAGE } from 'Constants/actionTypes';
+import {
+    SAVE_TOKEN, LOGIN, LOGOUT,
+    SET_LOGIN_MESSAGE, SET_TOKEN_VERIFICATION
+} from 'Constants/actionTypes';
 
 const INIT_STATE = {
     email: localStorage.getItem('email') || null,
@@ -26,6 +29,12 @@ export default (state = INIT_STATE, action) => {
             }
         case SET_LOGIN_MESSAGE:
             return { ...state, message: action.payload }
+        case SET_TOKEN_VERIFICATION:
+            if (!action.payload.isVerified) localStorage.clear();
+            return {
+                ...state,
+                isTokenVerified: action.payload.isVerified,
+            }
         case LOGIN:
             return {
                 ...state,

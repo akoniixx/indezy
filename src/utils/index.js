@@ -103,11 +103,24 @@ export const isCritical = (value, critical_min = null, critical_max = null) => {
 export const fetchPostRequest = async (api, payload) => {
     return fetch(api, {
         method: 'POST',
+        // mode: 'no-cors',
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload) || ''
+    })
+}
+
+export const fetchAuthorizedPostRequest = async (api, payload, token) => {
+    return fetch(api, {
+        method: 'POST',
+        // mode: 'no-cors',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(payload) || ''
     })
 }
 
@@ -116,13 +129,13 @@ export const fetchPostRequest = async (api, payload) => {
  * @param {ref} ref description field of db needs to access Ex. nameRef from firbase.js
  * @param {function} action description get value to set in reducer case Ex. setRealTimePoint 
  */
-export function getFireBaseData(ref, action){
+export function getFireBaseData(ref, action) {
     //console.log("ref", ref)
     ref.on('value', (snapshot) => {
         action(snapshot.val())
     });
 }
 
-export function offFireBaseData(ref){
+export function offFireBaseData(ref) {
     ref.off()
 }
