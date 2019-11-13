@@ -7,7 +7,7 @@ import Main from './main';
 
 const App = (props) => {
     const { match, closeModal, email, token, isLoggedIn, checkToken } = props;
-    console.log('email, token, isLoggedIn', email, token, isLoggedIn);
+    // console.log('email, token, isLoggedIn', email, token, isLoggedIn);
     useEffect(() => {
         checkToken(token);
     }, [token, checkToken]);

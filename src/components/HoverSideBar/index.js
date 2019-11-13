@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { flexBoxColCenter, flexBoxCenter, flexBox, flexBoxCol } from 'Containers/flexbox';
-import { toggleModal, openModal, login, closeModal, setName, setRealTimePoint } from 'Redux/actions';
+import { toggleModal, openModal, login, closeModal, setName, setRealTimePoint, saveSubscriber, saveEmail, saveTel, closeAllModals } from 'Redux/actions';
 import { connect } from 'react-redux';
 
 import * as firebaseRef from 'Constants/firebase';
@@ -11,9 +11,13 @@ import { INVALID_EMAIL, INVALID_TEL, FORM_EMPTY } from 'Constants/messages';
 
 
 const HoverSideBar = props => {
-    const { isOpen, toggleModal, openModal, closeModal, firebaseData } = props;
+    const { isOpen, toggleModal, openModal, closeModal, firebaseData, saveSubscriber, saveEmail, saveTel, closeAllModals, subscribeResult } = props;
     const { factoryName, setRealTimePoint } = props; //* firebase action 
     // console.log('firebaseData', firebaseData)
+    //* Reducer Listener
+    useEffect(() => {
+        if (subscribeResult === 'ok') handlerClickEvent();
+    }, [subscribeResult, closeAllModals]);
     //* Subscriber Email and Tel states and onChanges
     const [subEmail, setSubEmail] = useState('');
     const [subTel, setSubTel] = useState('');
@@ -41,22 +45,26 @@ const HoverSideBar = props => {
     }
     //* close modal methods
     const handlerClickEvent = (e) => {
-        if (e.target.className != 'exception') {
-            closeModal('emailPopup');
-            closeModal('contactPopup');
-            setSubEmail('');
-            setSubTel('');
-            setEmailError('');
-            setTelError('');
+        if (!e) clearPopups();
+        else if (e.target.className !== 'exception') {
+            clearPopups();
             window.removeEventListener('click', handlerClickEvent)
         }
+    }
+    const clearPopups = () => {
+        closeModal('emailPopup');
+        closeModal('contactPopup');
+        setSubEmail('');
+        setSubTel('');
+        setEmailError('');
+        setTelError('');
     }
     const onSubmitSubscriber = () => {
         const isEmailOk = Validators.email(subEmail);
         const isTelOk = Validators.tel(subTel);
-        if (isTelOk && isEmailOk) console.log('call post both');
-        else if (isTelOk) console.log('call post tel');
-        else if (isEmailOk) console.log('call post email');
+        if (isTelOk && isEmailOk) saveSubscriber(subEmail, subTel);
+        else if (isTelOk) saveTel(subTel);
+        else if (isEmailOk) saveEmail(subEmail);
         else {
             subEmail.length > 0 ? setEmailError(INVALID_EMAIL) : setEmailError(FORM_EMPTY);
             subTel.length > 0 ? setTelError(INVALID_TEL) : setTelError(FORM_EMPTY);
@@ -162,14 +170,17 @@ const HoverSideBar = props => {
     );
 }
 
-const mapStateToProps = ({ modals, firebase }) => (
-    {
-        isOpen: modals,
-        firebaseData: firebase
-    }
-);
+const mapStateToProps = ({ modals, firebase, subscribe }) => ({
+    isOpen: modals,
+    firebaseData: firebase,
+    subscribeResult: subscribe.postResult
+});
 
-export default connect(mapStateToProps, { toggleModal, openModal, login, closeModal, factoryName: setName, setRealTimePoint })(HoverSideBar);
+export default connect(mapStateToProps, {
+    toggleModal, openModal, login, closeModal,
+    factoryName: setName, setRealTimePoint,
+    saveSubscriber, saveEmail, saveTel, closeAllModals
+})(HoverSideBar);
 
 const HoverContainer = styled.div`
 position: absolute;

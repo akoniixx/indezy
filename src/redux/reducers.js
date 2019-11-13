@@ -7,6 +7,7 @@ import settings from './settings/reducer';
 import modals from './controllers/modals/reducer';
 import auth from './auth/reducer';
 import firebase from './firebase/reducer';
+import subscribe from './subscribe/reducer';
 //import dashboard from './contentProviders/dashboard/reducer';
 
 const reducers = combineReducers({
@@ -14,7 +15,8 @@ const reducers = combineReducers({
     settings,
     modals,
     auth,
-    firebase
+    firebase,
+    subscribe
     //dashboard
 });
 
